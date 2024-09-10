@@ -1,104 +1,235 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fit de clientes</title>
-	<footer>
-        <h1>Bitz Softwares</h1>
-    </footer>
+    <title>Área de Trabalho</title>
     <style>
         body {
-            background-color: #f0f0f0;
-            font-family: 'Arial', sans-serif;
+            background-color: #f5f7f9;
+            color: #333;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
         }
 
-        footer {
-            background-color: #32CD20;
-            color: #fff;
-            height: 80px;
-            padding: 10px;
-            text-align: center;
-            border-top: 1px solid #555;
-        }
-
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
+        #login {
+            width: 90%;
+            max-width: 400px;
+            background-color: #ffffff;
             padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        #login h1 {
+            color: #009688;
+            margin-bottom: 20px;
+            font-size: 24px;
+            font-weight: 600;
+        }
+
+        .login-input {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-sizing: border-box;
+        }
+
+        .login-button {
+            width: 100%;
+            padding: 10px;
+            background: linear-gradient(to bottom, #66bb6a, #43a047);
+            color: #ffffff;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s, box-shadow 0.3s;
+        }
+
+        .login-button:hover {
+            background: linear-gradient(to bottom, #43a047, #66bb6a);
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
+        }
+
+        .login-button:active {
+            transform: scale(0.95);
+        }
+
+        #site {
+            width: 90%;
+            max-width: 1200px;
+            margin: 20px auto;
+            display: none; /* Initially hide the site content */
+        }
+
+        #header {
+            background-color: #009688;
+            color: #ffffff;
+            height: 80px;
+            padding: 20px;
+            text-align: center;
+            font-size: 28px;
+            line-height: 40px;
+            border-bottom: 5px solid #00796b;
+            box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+            border-radius: 0 0 15px 15px;
+            margin-bottom: 30px;
+        }
+
+        #conteudo {
+            padding: 30px;
+            background-color: #ffffff;
+            border-radius: 15px;
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
         }
 
         .button-container {
             display: flex;
-            justify-content: space-between;
-            margin-top: 20px;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .button-column {
+            flex: 1;
+            max-width: 320px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
         .custom-button {
-            flex: 1;
-            display: inline-block;
-            padding: 10px;
-            font-size: 18px;
-            font-weight: bold;
-            text-align: center;
-            text-decoration: none;
-            background-color: #32CD20;
-            color: #fff;
-            border: 2px solid #228B22;
-            border-radius: 5px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            transition: background-color 0.3s, transform 0.2s ease-out;
+            color: #ffffff;
+            background: linear-gradient(to bottom, #66bb6a, #43a047);
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            border: solid #388e3c 1px;
+            height: 50px;
+            width: 100%;
+            border-radius: 12px;
+            margin: 10px 0;
             cursor: pointer;
-            margin-right: 10px; /* Espaçamento entre botões */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            font-weight: bold;
+            text-decoration: none;
+            text-align: center;
+            transition: background 0.3s, transform 0.2s ease-out, box-shadow 0.3s;
         }
 
         .custom-button:hover {
-            background-color: #228B22;
-            transform: scale(1.05);
+            background: linear-gradient(to bottom, #43a047, #66bb6a);
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
         }
 
         .custom-button:active {
             transform: scale(0.95);
         }
+
+        #conteudo h1 {
+            color: #009688;
+            margin: 0;
+            font-size: 32px;
+            text-align: center;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        @media (max-width: 768px) {
+            .button-container {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .button-column {
+                max-width: 100%;
+            }
+        }
     </style>
 </head>
 <body>
-
-    <div class="container">
-
-        
-
-        <h3></h3>
-
-        <div class="button-container">
-            <a href="https://drive.google.com/file/d/1YbPkvxpAC4DbwVVnLL2sMT7LhNN5VlmC/view?usp=sharing" target="_blank"class="custom-button">BASIC</a>
-            <a href="https://drive.google.com/file/d/178pbnSjrj14ykxjMO3Up8qrMiDv0VXnc/view?usp=sharing" target="_blank"class="custom-button">STARTER</a>
-            <a href="https://drive.google.com/file/d/1qg1jSFn19NWrml2bEmOCXQAEliUBDFii/view?usp=sharing" target="_blank"class="custom-button">PRO</a>
-            <a href="https://drive.google.com/file/d/1lsgtZyzaV1EYfmyd-_6fzfen_YwvHwSO/view?usp=sharing" target="_blank"class="custom-button">ENTERPRISE</a>
-        </div>
-		
-		 <div class="button-container">
-            <a href="https://docs.google.com/document/d/1ReR2jK60KWPjz-5et0o86-ttJXBGp5PmyrzBVcRf_WE/edit?usp=sharing" target="_blank"class="custom-button">ROTEIRO DE ATENDIMENTO</a>
-            <a href="https://docs.google.com/document/d/16qOWiLckmQtt71i_HTLYyI-iQxlZHUznl6zIOnwwpF8/edit?usp=sharing" target="_blank"class="custom-button">PROCESSO DE RETENÇÃO</a>
-            <a href="https://docs.google.com/spreadsheets/d/1Pr0vGx_RUMYD6mzG1I2wOZRukwdFFBsQkECUNrc-0-0/edit?gid=2115529454#gid=2115529454" target="_blank"class="custom-button">NPS ATIVO</a>
-            <a href="https://docs.google.com/document/d/1Ealu9lwB8svzkGi-gNpF2htBaHyWx0YiseKQVG7IOs0/edit" target="_blank"class="custom-button">CONFIGURAÇÃO GUIA DE MOTEIS</a>
-        </div>
-		<div class="button-container">
-            <a href="https://docs.google.com/spreadsheets/d/1nxTN1QdcecjYeAZjDKKvdg_lX_1LTLViQs0Z2hqm9lQ/edit?usp=sharing" target="_blank"class="custom-button">PLANILHA INDICADORES</a>
-            <a href="https://docs.google.com/spreadsheets/d/1iaSi4EPTjtFyGwio5s_GAGptEwMTlMEvA6jSyUIjVO8/edit?usp=sharing" target="_blank"class="custom-button">SAT</a>
-            <a href="https://docs.google.com/document/d/1SR7K1YppIitITaBQAo0ZXjVEGuihaPmHHU8BK4AW-oo/edit?usp=sharing" target="_blank"class="custom-button">Analise de desempenho por agente</a>
-            <a href="https://docs.google.com/document/d/1Ealu9lwB8svzkGi-gNpF2htBaHyWx0YiseKQVG7IOs0/edit" target="_blank"class="custom-button"></a>
-        </div>
-
+    <div id="login">
+        <h1>Login</h1>
+        <form id="login-form">
+            <input type="text" id="username" class="login-input" placeholder="Usuário" required>
+            <input type="password" id="password" class="login-input" placeholder="Senha" required>
+            <button type="submit" class="login-button">Entrar</button>
+        </form>
     </div>
 
-   
+    <div id="site">
+        <div id="header">
+            ÁREA DE TRABALHO
+        </div>
+        <div id="conteudo">
+            <div class="button-container">
+                <div class="button-column">
+                    <a href="https://docs.google.com/spreadsheets/d/19k1nKnLzrXAmLdSPphH_p_xIgpVnLujO/edit#gid=1787020901" target="_blank" class="custom-button">AVALIAÇÕES WHATSAPP</a>
+                    <a href="https://docs.google.com/spreadsheets/d/1ejto2QQFjBnABaj3R5wwlMiP5c7x08sh/edit#gid=1787020901" target="_blank" class="custom-button">FOLGAS</a>
+                    <a href="https://docs.google.com/spreadsheets/d/1qMIKnnzRAJakXkNDPnAoaCxEUSVyJwYw9eAlA5ATLRQ/edit?usp=sharing" target="_blank" class="custom-button">RESUMO BONIFICAÇÕES</a>
+                    <a href="https://docs.google.com/spreadsheets/d/1S3Bk91Ouk4qIT2yBMWgXyCawZfdnpTrW/edit#gid=1350182970" target="_blank" class="custom-button">ESCALA</a>
+                    <a href="https://docs.google.com/document/d/1rOFzYs6iKaIXoT9BQ6-DlZWLe7ZuMnp65SqwUYlDpP8/edit" target="_blank" class="custom-button">ATRIBUIÇÕES NI</a>
+                    <a href="https://docs.google.com/document/d/1eRvdfIMM8l394qDSBMs4OegYg6_4Bp48GK0BOJIfxGs/edit" target="_blank" class="custom-button">ATRIBUIÇÕES N2</a>
+                    <a href="https://docs.google.com/spreadsheets/d/1nxTN1QdcecjYeAZjDKKvdg_lX_1LTLViQs0Z2hqm9lQ/edit?gid=244591961#gid=244591961" target="_blank" class="custom-button">CS CANCELAMENTOS/RETENÇÃO</a>
+                </div>
+                <div class="button-column">
+                    <a href="https://drive.google.com/file/d/1jvt4HGYhMR4IndSs2IsD02-CT5NYmqW_/view?usp=sharing" target="_blank" class="custom-button">ATENDIMENTO</a>
+                    <a href="https://docs.google.com/document/d/1Z7tm3pzoS6OXyxlGiXpIizSHRWrXkzQzgZ0-Bi-v7hU/edit?usp=sharing" target="_blank" class="custom-button">PERFORMANCE</a>
+                    <a href="http://painel.bitzsoftwares.com.br/login" target="_blank" class="custom-button">PAINEL</a>
+                    <a href="https://docs.google.com/document/d/1xOYtKI-LYDkNQN_n3LFWWNZ_YDVj0FhQXJpUBDU8tnI/edit" target="_blank" class="custom-button">PLAYBOOK SUPORTE</a>
+                    <a href="https://docs.google.com/document/d/1uN3QjEzoQRQvb6GmhzoQ34AKeeI1mXLeSOAzoGZ2L_w/edit" target="_blank" class="custom-button">BONIFICAÇÕES</a>
+                    <a href="https://docs.google.com/document/d/1xvIKREEojWC9f4qWBeD28lT2VpenduKeXD1josabqGg/edit" target="_blank" class="custom-button">REUNIÕES</a>
+                    <a href="https://docs.google.com/document/d/1o0N_i6QFx6rGNwAAFsfabF7ovZRRXHM3/edit" target="_blank" class="custom-button">PLAYBOOK CS</a>
+                </div>
+                <div class="button-column">
+                    <a href="https://docs.google.com/spreadsheets/d/14D249Mwj1dOxL5ZrhoMcAh6CzM4Yv1XxGyY7ZzkP3iI/edit?usp=sharing" target="_blank" class="custom-button">INDICADORES INDIVIDUAIS</a>
+                    <a href="https://docs.google.com/spreadsheets/d/1EqBbbJguWioA_N-Arid_tROeuU4hFvIwDVFG0oQmqpg/edit?usp=sharing" target="_blank" class="custom-button">ALTA PRIORIDADE</a>
+                    <a href="https://docs.google.com/document/d/1ReR2jK60KWPjz-5et0o86-ttJXBGp5PmyrzBVcRf_WE/edit?usp=sharing" target="_blank" class="custom-button">ROTEIRO DE ATENDIMENTO</a>
+                    <a href="https://docs.google.com/document/d/16qOWiLckmQtt71i_HTLYyI-iQxlZHUznl6zIOnwwpF8/edit?usp=sharing" target="_blank" class="custom-button">PROCESSO DE RETENÇÃO</a>
+                    <a href="https://docs.google.com/spreadsheets/d/1Pr0vGx_RUMYD6mzG1I2wOZRukwdFFBsQkECUNrc-0-0/edit?gid=2115529454#gid=2115529454" target="_blank" class="custom-button">NPS ATIVO</a>
+                    <a href="https://docs.google.com/document/d/1Ealu9lwB8svzkGi-gNpF2htBaHyWx0YiseKQVG7IOs0/edit" target="_blank" class="custom-button">CONFIGURAÇÃO GUIA DE MOTEIS</a>
+                    <a href="https://docs.google.com/spreadsheets/d/1WUiCgqWyQUXYPD2QFl-sQIAaAMEQvHunjYgUV92Z4gs/edit?usp=sharing" target="_blank" class="custom-button">KPI'S</a>
+                </div>
+            </div>
+        </div>
+    </div>
 
-</body>
-</html>
+    <script>
+        // Usuário e senha definidos para autenticação
+        const predefinedUsername = 'Alan';
+        const predefinedPassword = 'Allan@2011';
 
-    
+        document.getElementById('login-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Impede o envio do formulário
 
+            // Captura o valor do nome de usuário e senha inseridos
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            // Verifica se o nome de usuário e a senha inseridos são os mesmos que os definidos
+            if (username === predefinedUsername && password === predefinedPassword) {
+                document.getElementById('login').style.display = 'none';
+                document.getElementById('site').style.display = 'block';
+            } else {
+                alert('Nome de usuário ou senha incorretos. Tente novamente.');
+            }
+        });
+    </script>
 </body>
 </html>
