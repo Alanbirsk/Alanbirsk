@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Treinamentos do Hotel</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            padding-bottom: 60px; /* Espaço para o rodapé */
+        }
+
+        /* Cabeçalho */
+        header {
+            background-color: #004d00; /* Verde escuro */
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: center; /* Centraliza o conteúdo */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            text-align: center; /* Centraliza o texto */
+        }
+
+        .search-container {
+            flex-grow: 1;
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .search-input {
+            padding: 8px;
+            border: none;
+            border-radius: 5px;
+            width: 250px;
+            margin-left: 10px;
+        }
+
+        .search-button {
+            padding: 8px 12px;
+            border: none;
+            border-radius: 5px;
+            background-color: #28a745; /* Verde Bitz */
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .search-button:hover {
+            background-color: #218838; /* Verde mais escuro */
+        }
+
+        /* Rodapé */
+        footer {
+            background-color: #005700; /* Verde mais claro */
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            left: 0;
+            right: 0;
+            bottom: 0;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 80px auto; /* Espaço para o cabeçalho fixo */
+            padding: 20px;
+            background: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+
+        h3 {
+            color: #333;
+            margin-top: 30px;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .btn {
+            display: block;
+            text-align: center;
+            padding: 15px;
+            margin: 0;
+            background-color: #28a745; /* Verde Bitz */
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s;
+            white-space: nowrap; /* Para evitar quebra de texto */
+        }
+
+        .btn:hover {
+            background-color: #218838; /* Verde mais escuro */
+        }
+
+        @media (max-width: 1200px) {
+            .grid-container {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (max-width: 900px) {
+            .grid-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .grid-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">Hotel Treinamentos</div>
+        <div class="search-container">
+            <input type="text" id="searchInput" class="search-input" placeholder="Buscar...">
+        </div>
+    </header>
+
+    <div class="container">
+        <h1>Treinamentos do Hotel</h1>
+
+        <h3>Cadastros:</h3>
+        <div class="grid-container" id="buttonContainer">
+            <a href="#" class="btn">Menu Estoque</a>
+            <a href="#" class="btn">Cadastro de locais de estoque</a>
+            <a href="#" class="btn">Menu Financeiro</a>
+            <a href="#" class="btn">Cadastro de plano de contas</a>
+            <a href="#" class="btn">Cadastro de centro de custo</a>
+            <a href="#" class="btn">Cadastro de contas e bancos</a>
+            <a href="#" class="btn">Cadastro de operadoras de cartão</a>
+            <a href="#" class="btn">Cadastro de moedas</a>
+            <a href="#" class="btn">Cadastro de valores de moedas</a>
+            <a href="#" class="btn">Orçamento previsto</a>
+            <a href="#" class="btn">Cadastro de tipos de contas</a>
+            <a href="#" class="btn">Cadastro de formas de pagamento</a>
+            <a href="#" class="btn">Menu Cadastros</a>
+            <a href="#" class="btn">Menu Operacional</a>
+            <a href="#" class="btn">Tarifas</a>
+            <a href="#" class="btn">Menu Calendário de tarifas</a>
+            <a href="#" class="btn">Tarifa flutuante</a>
+            <a href="#" class="btn">Geração de flutuante</a>
+            <a href="#" class="btn">Classificação de UH</a>
+            <a href="#" class="btn">Andar</a>
+            <a href="#" class="btn">Posição do quarto</a>
+            <a href="#" class="btn">Comanda</a>
+            <a href="#" class="btn">Quartos</a>
+            <a href="#" class="btn">Ponto de vendas</a>
+            <a href="#" class="btn">Canais de venda</a>
+            <a href="#" class="btn">Menu Governança</a>
+            <a href="#" class="btn">Check-list de limpeza</a>
+            <a href="#" class="btn">Tipos de contagem</a>
+            <a href="#" class="btn">Cadastro de pessoa</a>
+            <a href="#" class="btn">Cadastro de Agência</a>
+            <a href="#" class="btn">Menu Produtos</a>
+            <a href="#" class="btn">Categoria de produtos</a>
+            <a href="#" class="btn">Cadastro de Unidade de medida</a>
+            <a href="#" class="btn">Cadastro de Embalagem</a>
+            <a href="#" class="btn">Cadastro de produtos</a>
+            <a href="#" class="btn">Cadastro de Setor</a>
+            <a href="#" class="btn">Cadastro de usuário</a>
+            <a href="#" class="btn">Cadastro de veículo</a>
+        </div>
+
+        <h3>Restaurante - Cadastros:</h3>
+        <div class="grid-container" id="buttonContainer">
+            <a href="#" class="btn">Bairros</a>
+            <a href="#" class="btn">Tempo de Entrega</a>
+            <a href="#" class="btn">Formas de Entrega</a>
+            <a href="#" class="btn">Entregadores</a>
+            <a href="#" class="btn">Formas de pagamento</a>
+            <a href="#" class="btn">Pessoas</a>
+            <a href="#" class="btn">Mesas/Delivery</a>
+            <a href="#" class="btn">Comandas</a>
+            <a href="#" class="btn">Ponto de preparo</a>
+            <a href="#" class="btn">Categorias x Adicionais</a>
+            <a href="#" class="btn">Categorias x Opcionais</a>
+            <a href="#" class="btn">Impressoras</a>
+            <a href="#" class="btn">Checklists</a>
+            <a href="#" class="btn">Grupo de usuários</a>
+        </div>
+
+        <h3>Configurações:</h3>
+        <div class="grid-container" id="buttonContainer">
+            <a href="#" class="btn">Hotel - Parametrizações</a>
+            <a href="#" class="btn">Usuários e Grupos</a>
+            <a href="#" class="btn">Menu de Atendimentos</a>
+            <a href="#" class="btn">Cadastro de Férias</a>
+            <a href="#" class="btn">Tipos de Atendimento</a>
+            <a href="#" class="btn">Recepção - Parametrizações</a>
+            <a href="#" class="btn">Estoque - Parametrizações</a>
+            <a href="#" class="btn">Restaurante - Parametrizações</a>
+            <a href="#" class="btn">Ponto de vendas - Parametrizações</a>
+            <a href="#" class="btn">Geral - Parametrizações</a>
+        </div>
+
+        <h3>Recepção e Reservas:</h3>
+        <div class="grid-container" id="buttonContainer">
+            <a href="#" class="btn">Cadastro de Check-in</a>
+            <a href="#" class="btn">Cadastro de Check-out</a>
+            <a href="#" class="btn">Reservas</a>
+            <a href="#" class="btn">Checklists</a>
+        </div>
+
+        <h3>Financeiro:</h3>
+        <div class="grid-container" id="buttonContainer">
+            <a href="#" class="btn">Contas a receber</a>
+            <a href="#" class="btn">Contas a pagar</a>
+            <a href="#" class="btn">Relatório Financeiro</a>
+        </div>
+
+        <h3>Estoque e Compras:</h3>
+        <div class="grid-container" id="buttonContainer">
+            <a href="#" class="btn">Requisição de compras</a>
+            <a href="#" class="btn">Entrada de produtos</a>
+            <a href="#" class="btn">Baixa de produtos</a>
+            <a href="#" class="btn">Relatório de Estoque</a>
+        </div>
+
+        <h3>Módulo Restaurante:</h3>
+        <div class="grid-container" id="buttonContainer">
+            <a href="#" class="btn">Cardápio</a>
+            <a href="#" class="btn">Tabela de Preços</a>
+            <a href="#" class="btn">Relatório de Vendas</a>
+        </div>
+
+        <h3>Governança:</h3>
+        <div class="grid-container" id="buttonContainer">
+            <a href="#" class="btn">Check-list de limpeza</a>
+            <a href="#" class="btn">Estoque de roupas</a>
+            <a href="#" class="btn">Relatório de Governança</a>
+        </div>
+
+        <h3>Manutenção:</h3>
+        <div class="grid-container" id="buttonContainer">
+            <a href="#" class="btn">Solicitação de Manutenção</a>
+            <a href="#" class="btn">Relatório de Manutenção</a>
+        </div>
+
+        <h3>Fiscal:</h3>
+        <div class="grid-container" id="buttonContainer">
+            <a href="#" class="btn">Relatório Fiscal</a>
+            <a href="#" class="btn">Parametrizações Fiscais</a>
+        </div>
+
+        <h3>Gestão:</h3>
+        <div class="grid-container" id="buttonContainer">
+            <a href="#" class="btn">Relatórios de Gestão</a>
+            <a href="#" class="btn">Parâmetros de Gestão</a>
+        </div>
+
+        <h3>Central de Relatórios:</h3>
+        <div class="grid-container" id="buttonContainer">
+            <a href="#" class="btn">Relatório de Estoque</a>
+            <a href="#" class="btn">Relatório Financeiro</a>
+            <a href="#" class="btn">Relatório de Vendas</a>
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2024 Hotel Treinamentos. Todos os direitos reservados.
+    </footer>
+
+    <script>
+        const searchInput = document.getElementById('searchInput');
+        const buttons = document.querySelectorAll('.btn');
+
+        searchInput.addEventListener('input', function() {
+            const filter = searchInput.value.toLowerCase();
+
+            buttons.forEach(button => {
+                if (button.textContent.toLowerCase().includes(filter)) {
+                    button.style.display = 'block';
+                } else {
+                    button.style.display = 'none';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
