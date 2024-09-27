@@ -6,19 +6,11 @@
     <title>Área de Trabalho</title>
     <style>
         body {
-            background-color: #f5f7f9;
-            color: #333;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            overflow: hidden;
+            background-color: #f5f5f5;
         }
-
         #login {
             width: 90%;
             max-width: 400px;
@@ -26,28 +18,17 @@
             padding: 20px;
             border-radius: 15px;
             box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
-            text-align: center;
+            margin: 100px auto; /* Centraliza o login */
             display: flex;
             flex-direction: column;
-            justify-content: center;
         }
-
-        #login h1 {
-            color: #009688;
-            margin-bottom: 20px;
-            font-size: 24px;
-            font-weight: 600;
-        }
-
         .login-input {
             width: calc(100% - 20px);
             padding: 10px;
             margin: 10px 0;
             border: 1px solid #ccc;
             border-radius: 8px;
-            box-sizing: border-box;
         }
-
         .login-button {
             width: 100%;
             padding: 10px;
@@ -56,103 +37,106 @@
             border: none;
             border-radius: 8px;
             font-size: 16px;
-            font-weight: bold;
             cursor: pointer;
-            transition: background 0.3s, box-shadow 0.3s;
         }
-
-        .login-button:hover {
-            background: linear-gradient(to bottom, #43a047, #66bb6a);
-            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
-        }
-
-        .login-button:active {
-            transform: scale(0.95);
-        }
-
         #site {
-            width: 90%;
-            max-width: 1200px;
-            margin: 20px auto;
-            display: none; /* Inicialmente oculta o conteúdo do site */
-            overflow-y: auto; /* Permite rolar verticalmente */
-            height: 80vh; /* Define uma altura fixa para rolagem */
-            box-sizing: border-box;
+            display: none; /* Inicialmente oculto */
         }
-
-        #header {
-            background-color: #009688;
-            color: #ffffff;
-            padding: 20px;
-            text-align: center;
-            font-size: 2.5vw; /* Tamanho da fonte responsivo */
-            line-height: 1.2;
-            border-bottom: 5px solid #00796b;
-            box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
-            border-radius: 0 0 15px 15px;
-            margin-bottom: 30px;
-            overflow: hidden; /* Garante que o texto não ultrapasse os limites */
+        header {
+            background-color: #2E7D32; /* Verde escuro */
+            color: white;
+            display: flex;
+            align-items: center; /* Alinha verticalmente */
+            padding: 15px 20px; /* Espaçamento interno */
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Sombra para dar profundidade */
         }
-
+        .logo img {
+            height: 60px; /* Altura do logotipo */
+            margin-right: 20px; /* Espaço entre logo e botão */
+            border-radius: 5px; /* Cantos arredondados */
+        }
+        nav {
+            position: relative; /* Para posicionar o menu suspenso */
+            margin-left: auto; /* Alinha o menu à direita */
+        }
+        .menu {
+            display: flex; /* Menu horizontal */
+            list-style: none; /* Remove marcadores da lista */
+            margin: 0; /* Remove margem */
+            padding: 0; /* Remove preenchimento */
+        }
+        .menu > li {
+            position: relative; /* Para o submenu */
+            margin-left: 20px; /* Espaço entre os itens */
+        }
+        .menu > li > a {
+            text-decoration: none; /* Remove underline */
+            color: white; /* Cor do texto */
+            font-weight: bold; /* Negrito */
+            padding: 10px 20px; /* Espaçamento interno dos botões */
+            border-radius: 5px; /* Cantos arredondados */
+            transition: background-color 0.3s; /* Transição suave */
+        }
+        .menu > li > a:hover {
+            background-color: #1B5E20; /* Verde mais escuro ao passar o mouse */
+        }
+        .submenu {
+            display: none; /* Escondido por padrão */
+            position: absolute; /* Posiciona o submenu */
+            background-color: #2E7D32; /* Fundo do submenu */
+            padding: 10px 0; /* Espaçamento interno */
+            border-radius: 5px; /* Cantos arredondados */
+            z-index: 1; /* Para garantir que fique acima */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Sombra para dar profundidade */
+        }
+        .menu > li:hover .submenu {
+            display: block; /* Mostra o submenu ao passar o mouse */
+        }
+        .submenu a {
+            color: white; /* Cor do texto */
+            padding: 8px 15px; /* Espaçamento interno */
+            display: block; /* Para que cada item ocupe a linha inteira */
+            text-decoration: none; /* Remove underline */
+            text-transform: capitalize; /* Primeira letra maiúscula */
+        }
+        .submenu a:hover {
+            background-color: #1B5E20; /* Verde ao passar o mouse */
+        }
+        .main-content {
+            padding: 20px; /* Espaçamento interno */
+            text-align: center; /* Centraliza o texto */
+        }
+        h1 {
+            color: #2E7D32; /* Cor do título */
+        }
         #conteudo {
             display: grid;
-            grid-template-columns: repeat(4, 1fr); /* 4 colunas de largura igual */
-            gap: 20px; /* Espaçamento entre as colunas */
+            grid-template-columns: repeat(4, 1fr); /* 4 colunas */
+            gap: 20px;
             padding: 20px;
-            box-sizing: border-box;
         }
-
         .custom-button {
             display: block;
             color: #ffffff;
             background: linear-gradient(to bottom, #66bb6a, #43a047);
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-            border: solid #388e3c 1px;
-            height: 100px; /* Ajuste a altura do botão conforme necessário */
-            width: 100%;
+            height: 100px;
             border-radius: 12px;
-            margin: 0;
-            cursor: pointer;
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 16px;
             font-weight: bold;
             text-decoration: none;
-            text-transform: uppercase; /* Converte o texto para maiúsculas */
-            text-align: center;
-            transition: background 0.3s, transform 0.2s ease-out, box-shadow 0.3s;
+            text-transform: uppercase;
+            transition: background 0.3s;
         }
-
         .custom-button:hover {
             background: linear-gradient(to bottom, #43a047, #66bb6a);
-            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
-        }
-
-        .custom-button:active {
-            transform: scale(0.95);
-        }
-
-        @media (max-width: 1200px) {
-            #conteudo {
-                grid-template-columns: repeat(3, 1fr); /* 3 colunas para telas menores */
-            }
-        }
-
-        @media (max-width: 900px) {
-            #conteudo {
-                grid-template-columns: repeat(2, 1fr); /* 2 colunas para telas menores */
-            }
-        }
-
-        @media (max-width: 600px) {
-            #conteudo {
-                grid-template-columns: 1fr; /* 1 coluna para telas muito pequenas */
-            }
         }
     </style>
 </head>
 <body>
+
     <div id="login">
         <h1>Login</h1>
         <form id="login-form">
@@ -163,55 +147,73 @@
     </div>
 
     <div id="site">
-        <div id="header">
-            ÁREA DE TRABALHO
+        <header>
+            <div class="logo">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBNXDpjIO04GdT9f0i1AoKisFJ8sDT-z5kWw&s" alt="Logotipo">
+            </div>
+            <nav>
+                <ul class="menu">
+                    <li>
+                        <a href="#home">Processos</a>
+                        <ul class="submenu">
+                            <li><a href="#downsell" target="_blank">Downsell</a></li>
+                            <li><a href="./retenção.html" target="_blank">Retenção</a></li>
+                            <li><a href="#csat" target="_blank">CSAT</a></li>
+                            <li><a href="#inadimplencia" target="_blank">Inadimplência</a></li>
+                            <li><a href="#semaforo" target="_blank">Semáforo</a></li>
+                            <li><a href="#suporte" target="_blank">Suporte</a></li>
+                            <li><a href="#detrator" target="_blank">Detrator</a></li>
+                            <li><a href="#cancelamento" target="_blank">Cancelamento</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <div class="main-content">
+            <h1>Bem-vindo!</h1>
+            <p>Explore nossos processos.</p>
         </div>
         <div id="conteudo">
-            <!-- Botões reorganizados -->
-            <a href="https://drive.google.com/drive/folders/1CG-QfFLkgug4TpI9LfewNYFFIPuxawbJ" target="_blank" class="custom-button">FELIPE</a>
-            <a href="https://drive.google.com/drive/folders/1_A8RNtVCdjC-4xaz2IChaf1QHkPYadPr" target="_blank" class="custom-button">GABRIEL</a>
-            <a href="https://drive.google.com/drive/folders/112_6dffYQ5r93XRnKElL3v1zYiR53pk5" target="_blank" class="custom-button">JULIO</a>
-            <a href="https://drive.google.com/drive/folders/1vXYILdp6rHYvE-5vPEoQSiHJhkzLxRQ3" target="_blank" class="custom-button">BRUNO</a>
-            <a href="https://docs.google.com/spreadsheets/d/19k1nKnLzrXAmLdSPphH_p_xIgpVnLujO/edit#gid=1787020901" target="_blank" class="custom-button">AVALIAÇÕES WHATSAPP</a>
-            <a href="https://docs.google.com/spreadsheets/d/1vYiqAnLSt0FiT0w4nUz0N-O5YEVxJX3P/edit?gid=1787020901#gid=1787020901" target="_blank" class="custom-button">FOLGAS</a>
-            <a href="https://docs.google.com/spreadsheets/d/1qMIKnnzRAJakXkNDPnAoaCxEUSVyJwYw9eAlA5ATLRQ/edit?usp=sharing" target="_blank" class="custom-button">RESUMO BONIFICAÇÕES</a>
-            <a href="https://docs.google.com/spreadsheets/d/1S3Bk91Ouk4qIT2yBMWgXyCawZfdnpTrW/edit#gid=1350182970" target="_blank" class="custom-button">ESCALA</a>
-            <a href="https://docs.google.com/document/d/1rOFzYs6iKaIXoT9BQ6-DlZWLe7ZuMnp65SqwUYlDpP8/edit" target="_blank" class="custom-button">ATRIBUIÇÕES NI</a>
-            <a href="https://docs.google.com/document/d/1eRvdfIMM8l394qDSBMs4OegYg6_4Bp48GK0BOJIfxGs/edit" target="_blank" class="custom-button">ATRIBUIÇÕES N2</a>
-            <a href="https://docs.google.com/spreadsheets/d/1nxTN1QdcecjYeAZjDKKvdg_lKuoR3NC_iQlATFhDDp8/edit#gid=779573678" target="_blank" class="custom-button">FLUXO DO TIME</a>
-            <a href="https://docs.google.com/document/d/1kSz_fjbO5nW3b3hHAr7JfO9D8zk3Q/edit" target="_blank" class="custom-button">BONIFICAÇÕES</a>
-            <a href="https://docs.google.com/document/d/1xvIKREEojWC9f4qWBeD28lT2VpenduKeXD1josabqGg/edit" target="_blank" class="custom-button">REUNIÕES</a>
-            <a href="https://docs.google.com/document/d/1o0N_i6QFx6rGNwAAFsfabF7ovZRRXHM3/edit" target="_blank" class="custom-button">PLAYBOOK CS</a>
-            <a href="https://docs.google.com/spreadsheets/d/14D249Mwj1dOxL5ZrhoMcAh6CzM4Yv1XxGyY7ZzkP3iI/edit?usp=sharing" target="_blank" class="custom-button">INDICADORES INDIVIDUAIS</a>
-            <a href="https://docs.google.com/spreadsheets/d/1EqBbbJguWioA_N-Arid_tROeuU4hFvIwDVFG0oQmqpg/edit?usp=sharing" target="_blank" class="custom-button">ALTA PRIORIDADE</a>
-            <a href="https://docs.google.com/document/d/1ReR2jK60KWPjz-5et0o86-ttJXBGp5PmyrzBVcRf_WE/edit?usp=sharing" target="_blank" class="custom-button">ROTEIRO DE ATENDIMENTO</a>
-            <a href="https://docs.google.com/document/d/16qOWiLckmQtt71i_HTLYyI-iQxlZHUznl6zIOnwwpF8/edit?usp=sharing" target="_blank" class="custom-button">PROCESSO DE RETENÇÃO</a>
-            <a href="https://docs.google.com/spreadsheets/d/1Pr0vGx_RUMYD6mzG1I2wOZRukwdFFBsQkECUNrc-0-0/edit?gid=2115529454#gid=2115529454" target="_blank" class="custom-button">NPS ATIVO</a>
-            <a href="https://docs.google.com/document/d/1Ealu9lwB8svzkGi-gNpF2htBaHyWx0YiseKQVG7IOs0/edit" target="_blank" class="custom-button">CONFIGURAÇÃO GUIA DE MOTEIS</a>
-            <a href="https://docs.google.com/spreadsheets/d/1kGrZ_hMF9muk81ZWhEWXxokkFuoPurQZmzN7s0n4q3I/edit?gid=0#gid=0" target="_blank" class="custom-button">KPI'S</a>
+            <a href="https://docs.google.com/spreadsheets/d/19k1nKnLzrXAmLdSPphH_p_xIgpVnLujO/edit#gid=1787020901" target="_blank" class="custom-button">Avaliações WhatsApp</a>
+            <a href="https://docs.google.com/spreadsheets/d/1ejto2QQFjBnABaj3R5wwlMiP5c7x08sh/edit#gid=1787020901" target="_blank" class="custom-button">Folgas</a>
+            <a href="https://docs.google.com/spreadsheets/d/1qMIKnnzRAJakXkNDPnAoaCxEUSVyJwYw9eAlA5ATLRQ/edit?usp=sharing" target="_blank" class="custom-button">Resumo Bonificações</a>
+            <a href="https://docs.google.com/spreadsheets/d/1S3Bk91Ouk4qIT2yBMWgXyCawZfdnpTrW/edit#gid=1350182970" target="_blank" class="custom-button">Escala</a>
+            <a href="https://docs.google.com/document/d/1rOFzYs6iKaIXoT9BQ6-DlZWLe7ZuMnp65SqwUYlDpP8/edit" target="_blank" class="custom-button">Atribuições NI</a>
+            <a href="https://docs.google.com/document/d/1eRvdfIMM8l394qDSBMs4OegYg6_4Bp48GK0BOJIfxGs/edit" target="_blank" class="custom-button">Atribuições N2</a>
+            <a href="https://docs.google.com/spreadsheets/d/1nxTN1QdcecjYeAZjDKKvdg_lX_1LTLViQs0Z2hqm9lQ/edit?gid=244591961#gid=244591961" target="_blank" class="custom-button">CS Cancelamentos/Retenção</a>
+            <a href="https://drive.google.com/file/d/1jvt4HGYhMR4IndSs2IsD02-CT5NYmqW_/view?usp=sharing" target="_blank" class="custom-button">Atendimento</a>
+            <a href="https://docs.google.com/document/d/1Z7tm3pzoS6OXyxlGiXpIizSHRWrXkzQzgZ0-Bi-v7hU/edit?usp=sharing" target="_blank" class="custom-button">Performance</a>
+            <a href="http://painel.bitzsoftwares.com.br/login" target="_blank" class="custom-button">Painel</a>
+            <a href="https://docs.google.com/document/d/1xOYtKI-LYDkNQN_n3LFWWNZ_YDVj0FhQXJpUBDU8tnI/edit" target="_blank" class="custom-button">Playbook Suporte</a>
+            <a href="https://docs.google.com/document/d/1uN3QjEzoQRQvb6GmhzoQ34AKeeI1mXLeSOAzoGZ2L_w/edit" target="_blank" class="custom-button">Bonificações</a>
+            <a href="https://docs.google.com/document/d/1xvIKREEojWC9f4qWBeD28lT2VpenduKeXD1josabqGg/edit" target="_blank" class="custom-button">Reuniões</a>
+            <a href="https://docs.google.com/document/d/1o0N_i6QFx6rGNwAAFsfabF7ovZRRXHM3/edit" target="_blank" class="custom-button">Playbook CS</a>
+            <a href="https://docs.google.com/spreadsheets/d/14D249Mwj1dOxL5ZrhoMcAh6CzM4Yv1XxGyY7ZzkP3iI/edit?usp=sharing" target="_blank" class="custom-button">Indicadores Individuais</a>
+            <a href="https://docs.google.com/spreadsheets/d/1EqBbbJguWioA_N-Arid_tROeuU4hFvIwDVFG0oQmqpg/edit?usp=sharing" target="_blank" class="custom-button">Alta prioridade</a>
+            <a href="https://docs.google.com/document/d/1ReR2jK60KWPjz-5et0o86-ttJXBGp5PmyrzBVcRf_WE/edit?usp=sharing" target="_blank" class="custom-button">Roteiro de Atendimento</a>
+            <a href="https://docs.google.com/document/d/16qOWiLckmQtt71i_HTLYyI-iQxlZHUznl6zIOnwwpF8/edit?usp=sharing" target="_blank" class="custom-button">Processo de Retenção</a>
+            <a href="https://docs.google.com/spreadsheets/d/1Pr0vGx_RUMYD6mzG1I2wOZRukwdFFBsQkECUNrc-0-0/edit?gid=2115529454#gid=2115529454" target="_blank" class="custom-button">NPS Ativo</a>
+            <a href="https://docs.google.com/document/d/1Ealu9lwB8svzkGi-gNpF2htBaHyWx0YiseKQVG7IOs0/edit" target="_blank" class="custom-button">Configuração Guia de Motéis</a>
+            <a href="https://docs.google.com/spreadsheets/d/1WUiCgqWyQUXYPD2QFl-sQIAaAMEQvHunjYgUV92Z4gs/edit?usp=sharing" target="_blank" class="custom-button">KPI's</a>
+            <a href="#" target="_blank" class="custom-button">Vazio</a>
         </div>
     </div>
 
     <script>
-        // Usuário e senha definidos para autenticação
-        const predefinedUsername = 'Alan';
-        const predefinedPassword = 'Allan@2011';
-
-        document.getElementById('login-form').addEventListener('submit', function(event) {
-            event.preventDefault(); // Impede o envio do formulário
-
-            // Captura o valor do nome de usuário e senha inseridos
+        document.getElementById('login-form').onsubmit = function(event) {
+            event.preventDefault();
             const username = document.getElementById('username').value;
             const password = document.getElementById('password').value;
 
-            // Verifica se o nome de usuário e a senha inseridos são os mesmos que os definidos
-            if (username === predefinedUsername && password === predefinedPassword) {
+            // Verificação de credenciais (exemplo simples)
+            if (username === 'admin' && password === '123') {
                 document.getElementById('login').style.display = 'none';
                 document.getElementById('site').style.display = 'block';
             } else {
-                alert('Nome de usuário ou senha incorretos. Tente novamente.');
+                alert('Usuário ou senha incorretos. Tente novamente.');
             }
-        });
+        };
     </script>
+
 </body>
 </html>
