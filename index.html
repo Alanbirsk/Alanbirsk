@@ -49,6 +49,11 @@
             align-items: center; /* Alinha verticalmente */
             padding: 15px 20px; /* Espaçamento interno */
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Sombra para dar profundidade */
+            position: fixed; /* Fixa o cabeçalho */
+            top: 0; /* Posiciona no topo */
+            left: 0; /* Alinha à esquerda */
+            right: 0; /* Alinha à direita */
+            z-index: 1000; /* Garante que fique acima do conteúdo */
         }
         .logo img {
             height: 60px; /* Altura do logotipo */
@@ -103,7 +108,7 @@
             background-color: #1B5E20; /* Verde ao passar o mouse */
         }
         .main-content {
-            padding: 20px; /* Espaçamento interno */
+            padding: 80px 20px 20px; /* Espaçamento interno, com espaço no topo para o cabeçalho fixo */
             text-align: center; /* Centraliza o texto */
         }
         h1 {
