@@ -18,7 +18,7 @@
             padding: 20px;
             border-radius: 15px;
             box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
-            margin: 100px auto; /* Centraliza o login */
+            margin: 100px auto;
             display: flex;
             flex-direction: column;
         }
@@ -46,77 +46,77 @@
             background-color: #2E7D32; /* Verde escuro */
             color: white;
             display: flex;
-            align-items: center; /* Alinha verticalmente */
-            padding: 15px 20px; /* Espaçamento interno */
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Sombra para dar profundidade */
-            position: fixed; /* Fixa o cabeçalho */
-            top: 0; /* Posiciona no topo */
-            left: 0; /* Alinha à esquerda */
-            right: 0; /* Alinha à direita */
-            z-index: 1000; /* Garante que fique acima do conteúdo */
+            align-items: center;
+            padding: 15px 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
         }
         .logo img {
-            height: 60px; /* Altura do logotipo */
-            margin-right: 20px; /* Espaço entre logo e botão */
-            border-radius: 5px; /* Cantos arredondados */
+            height: 60px;
+            margin-right: 20px;
+            border-radius: 5px;
         }
         nav {
-            position: relative; /* Para posicionar o menu suspenso */
-            margin-left: auto; /* Alinha o menu à direita */
+            position: relative;
+            margin-left: auto;
         }
         .menu {
-            display: flex; /* Menu horizontal */
-            list-style: none; /* Remove marcadores da lista */
-            margin: 0; /* Remove margem */
-            padding: 0; /* Remove preenchimento */
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
         }
         .menu > li {
-            position: relative; /* Para o submenu */
-            margin-left: 20px; /* Espaço entre os itens */
+            position: relative;
+            margin-left: 20px;
         }
         .menu > li > a {
-            text-decoration: none; /* Remove underline */
-            color: white; /* Cor do texto */
-            font-weight: bold; /* Negrito */
-            padding: 10px 20px; /* Espaçamento interno dos botões */
-            border-radius: 5px; /* Cantos arredondados */
-            transition: background-color 0.3s; /* Transição suave */
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
         }
         .menu > li > a:hover {
-            background-color: #1B5E20; /* Verde mais escuro ao passar o mouse */
+            background-color: #1B5E20;
         }
         .submenu {
             display: none; /* Escondido por padrão */
-            position: absolute; /* Posiciona o submenu */
-            background-color: #2E7D32; /* Fundo do submenu */
-            padding: 10px 0; /* Espaçamento interno */
-            border-radius: 5px; /* Cantos arredondados */
-            z-index: 1; /* Para garantir que fique acima */
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Sombra para dar profundidade */
+            position: absolute;
+            background-color: #2E7D32;
+            padding: 10px 0;
+            border-radius: 5px;
+            z-index: 1;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
         }
         .menu > li:hover .submenu {
-            display: block; /* Mostra o submenu ao passar o mouse */
+            display: block;
         }
         .submenu a {
-            color: white; /* Cor do texto */
-            padding: 8px 15px; /* Espaçamento interno */
-            display: block; /* Para que cada item ocupe a linha inteira */
-            text-decoration: none; /* Remove underline */
-            text-transform: capitalize; /* Primeira letra maiúscula */
+            color: white;
+            padding: 8px 15px;
+            display: block;
+            text-decoration: none;
+            text-transform: capitalize;
         }
         .submenu a:hover {
-            background-color: #1B5E20; /* Verde ao passar o mouse */
+            background-color: #1B5E20;
         }
         .main-content {
-            padding: 80px 20px 20px; /* Espaçamento interno, com espaço no topo para o cabeçalho fixo */
-            text-align: center; /* Centraliza o texto */
+            padding: 80px 20px 20px;
+            text-align: center;
         }
         h1 {
-            color: #2E7D32; /* Cor do título */
+            color: #2E7D32;
         }
         #conteudo {
             display: grid;
-            grid-template-columns: repeat(4, 1fr); /* 4 colunas */
+            grid-template-columns: repeat(4, 1fr);
             gap: 20px;
             padding: 20px;
         }
@@ -172,6 +172,12 @@
                             <li><a href="./treinamentos.html" target="_blank">Treinamentos</a></li>
                         </ul>
                     </li>
+                    <li>
+                        <a href="#formulario">Avaliação</a>
+                        <ul class="submenu">
+                            <li><a href="formulario.html" target="_blank">Avaliação</a></li>
+                        </ul>
+                    </li>
                 </ul>
             </nav>
         </header>
@@ -180,6 +186,7 @@
             <p>Explore nossos processos.</p>
         </div>
         <div id="conteudo">
+            <!-- Botões de conteúdo -->
             <a href="https://docs.google.com/spreadsheets/d/19k1nKnLzrXAmLdSPphH_p_xIgpVnLujO/edit#gid=1787020901" target="_blank" class="custom-button">Avaliações WhatsApp</a>
             <a href="https://docs.google.com/spreadsheets/d/1ejto2QQFjBnABaj3R5wwlMiP5c7x08sh/edit#gid=1787020901" target="_blank" class="custom-button">Folgas</a>
             <a href="https://docs.google.com/spreadsheets/d/1qMIKnnzRAJakXkNDPnAoaCxEUSVyJwYw9eAlA5ATLRQ/edit?usp=sharing" target="_blank" class="custom-button">Resumo Bonificações</a>
