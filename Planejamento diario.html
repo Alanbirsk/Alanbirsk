@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cronograma de Tarefas - Semana</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 30px;
+        }
+        .container {
+            width: 80%;
+            margin: 20px auto;
+        }
+        .day {
+            background-color: #e8f5e9;
+            border-left: 5px solid #4CAF50;
+            margin-bottom: 20px;
+            padding: 15px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .day h2 {
+            margin-top: 0;
+            color: #388E3C;
+        }
+        .task-list {
+            margin: 0;
+            padding-left: 20px;
+        }
+        .task-list li {
+            margin: 5px 0;
+            font-size: 16px;
+        }
+        footer {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 5px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        /* Estilos para a caixa de diálogo expansiva (Accordion) */
+        .accordion {
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+            padding: 10px;
+            width: 100%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 16px;
+            margin: 5px 0;
+            border-radius: 5px;
+        }
+
+        .active, .accordion:hover {
+            background-color: #45a049;
+        }
+
+        .panel {
+            padding: 10px;
+            background-color: #f1f1f1;
+            display: none;
+            overflow: hidden;
+            border-radius: 5px;
+            margin-top: 5px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Cronograma Semanal de Tarefas</h1>
+    </header>
+
+    <div class="container">
+        <!-- Segunda-feira -->
+        <div class="day">
+            <h2>Segunda-feira</h2>
+            <ul class="task-list">
+                <li>
+                    <button class="accordion">Auxiliar no Atendimento</button>
+                    <div class="panel">
+                        <p>Auxiliar no atendimento é ajudar os agentes de suporte com as questões mais simples ou quando há uma sobrecarga de trabalho.</p>
+                    </div>
+                </li>
+                <li>
+                    <button class="accordion">Revisar os Tickets Atribuídos para Mim</button>
+                    <div class="panel">
+                        <p>Revisar os tickets atribuídos para garantir que todos os tickets que chegaram são tratados no tempo adequado.</p>
+                    </div>
+                </li>
+                <li>
+                    <button class="accordion">Resolver os Tickets Atribuídos a Mim</button>
+                    <div class="panel">
+                        <p>Resolver os tickets é fornecer uma solução ou resposta para os clientes que entraram em contato através dos tickets de suporte.</p>
+                    </div>
+                </li>
+                <li>
+                    <button class="accordion">Verificar os Tickets Offlines</button>
+                    <div class="panel">
+                        <p>Verificar tickets offlines refere-se a tickets que foram fechados ou deixados sem resposta, mas que precisam ser analisados ou reabertos para ações corretivas.</p>
+                    </div>
+                </li>
+                <li>
+                    <button class="accordion">Verificar os CSAT do Final de Semana</button>
+                    <div class="panel">
+                        <p>Verificar o CSAT (Customer Satisfaction) é analisar as avaliações de satisfação dos clientes para entender onde podemos melhorar o atendimento.</p>
+                    </div>
+                </li>
+                <li>
+                    <button class="accordion">Atribuir as Avaliações Geradas por Formulário</button>
+                    <div class="panel">
+                        <p>Atribuir as avaliações significa organizar os feedbacks coletados e direcioná-los para as áreas responsáveis para análise e melhorias.</p>
+                    </div>
+                </li>
+                <li>
+                    <button class="accordion">Levantar Indicadores do Suporte</button>
+                    <div class="panel">
+                        <p>Levantar indicadores do suporte envolve coletar dados para medir a performance das equipes de suporte, como tempo de resposta, resolução de problemas, etc.</p>
+                    </div>
+                </li>
+                <li>
+                    <button class="accordion">Levantar Indicadores Individuais por Agente</button>
+                    <div class="panel">
+                        <p>Verificar a performance individual dos agentes para garantir que cada um esteja cumprindo suas metas de qualidade e quantidade de atendimentos.</p>
+                    </div>
+                </li>
+                <li>
+                    <button class="accordion">Enviar Indicadores no Grupo de Gestão</button>
+                    <div class="panel">
+                        <p>Compartilhar os resultados de indicadores com o time de gestão para garantir que todos estejam alinhados com as metas e resultados obtidos.</p>
+                    </div>
+                </li>
+                <li>
+                    <button class="accordion">Enviar Indicadores para a Jessica e Deyse</button>
+                    <div class="panel">
+                        <p>Enviar os relatórios e indicadores de performance para a Jessica e Deyse para acompanhamento e análise de resultados.</p>
+                    </div>
+                </li>
+                <li>
+                    <button class="accordion">Contatos com Clientes de Cancelamento</button>
+                    <div class="panel">
+                        <p>Entrar em contato com clientes que estão considerando cancelar o serviço, com o intuito de reter ou resolver problemas.</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Terça-feira -->
+        <div class="day">
+            <h2>Terça-feira</h2>
+            <ul class="task-list">
+                <li>
+                    <button class="accordion">Auxiliar nos Atendimentos</button>
+                    <div class="panel">
+                        <p>Auxiliar os atendentes nos tickets mais complexos, proporcionando ajuda quando necessário.</p>
+                    </div>
+                </li>
+                <li>
+                    <button class="accordion">Levantar Indicadores do CS</button>
+                    <div class="panel">
+                        <p>Levantar os indicadores do atendimento ao cliente (CS) para entender a performance do time e sugerir melhorias.</p>
+                    </div>
+                </li>
+                <li>
+                    <button class="accordion">Retenção-Cancelamentos-CSAT-Semáforo-Inadimplência</button>
+                    <div class="panel">
+                        <p>Analisar e trabalhar com indicadores como CSAT, inadimplência e taxa de cancelamento para reter clientes.</p>
+                    </div>
+                </li>
+                <li>
+                    <button class="accordion">Revisar Itens Acima para Garantir que Está Fluindo</button>
+                    <div class="panel">
+                        <p>Revisar os indicadores, feedbacks e cancelamentos para garantir que o fluxo de trabalho está adequado e que há melhorias contínuas.</p>
+                    </div>
+                </li>
+                <li>
+                    <button class="accordion">Realizar Feedback Individual com os Agentes</button>
+                    <div class="panel">
+                        <p>Dar feedback individual para os agentes com base nos indicadores de performance, para melhorar a qualidade do atendimento.</p>
+                    </div>
+                </li>
+                <li>
+                    <button class="accordion">Contatos com Clientes de Cancelamento</button>
+                    <div class="panel">
+                        <p>Entrar em contato com clientes que estão considerando cancelar o serviço, oferecendo soluções para reter o cliente.</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Quarta-feira -->
+        <div class="day">
+            <h2>Quarta-feira</h2>
+            <ul class="task-list">
+                <li>
+                    <button class="accordion">Auxiliar no Atendimento</button>
+                    <div class="panel">
+                        <p>Auxiliar os atendentes a resolver tickets mais difíceis e oferecer suporte extra quando necessário.</p>
+                    </div>
+                </li>
+                <li>
+                    <button class="accordion">Leitura dos Atendimentos</button>
+                    <div class="panel">
+                        <p>Verificar se os atendentes estão aplicando corretamente as técnicas aprendidas em treinamento.</p>
+                    </div>
+                </li>
+                <li>
+                    <button class="accordion">Preparar Treinamento para o Time</button>
+                    <div class="panel">
+                        <p>Preparar material de treinamento baseado nas análises dos atendimentos anteriores, focando em melhorias.</p>
+                    </div>
+                </li>
+                <li>
+                    <button class="accordion">Definir Ações de Melhoria</button>
+                    <div class="panel">
+                        <p>Com base nos indicadores e feedbacks, definir e implementar ações de melhoria contínua para a equipe.</p>
+                    </div>
+                </li>
+                <li>
+                    <button class="accordion">Estudo de Processos e Logística para Melhorias</button>
+                    <div class="panel">
+                        <p>Estudar e analisar os processos internos para encontrar pontos de melhoria e otimizar a operação do suporte.</p>
+                    </div>
+                </li>
+                <li>
+                    <button class="accordion">Retenção-Cancelamentos-CSAT-Semáforo-Inadimplência</button>
+                    <div class="panel">
+                        <p>Revisar os indicadores de retenção, inadimplência e semáforo para otimizar a gestão de clientes e resolver possíveis problemas.</p>
+                    </div>
+                </li>
+                <li>
+                    <button class="accordion">Contatos com Clientes de Cancelamento</button>
+                    <div class="panel">
+                        <p>Entrar em contato com os clientes para tentar evitar o cancelamento e oferecer alternativas para o problema deles.</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Quinta-feira -->
+        <div class="day">
+            <h2>Quinta-feira</h2>
+            <ul class="task-list">
+                <li>
+                    <button class="accordion">Auxiliar no Atendimento</button>
+                    <div class="panel">
+                        <p>Auxiliar os agentes de suporte com dúvidas ou questões mais complexas, garantindo a fluidez do atendimento.</p>
+                    </div>
+                </li>
+                <li>
+                    <button class="accordion">Alinhamento com o CS</button>
+                    <div class="panel">
+                        <p>Realizar alinhamentos com o time de CS para garantir que as metas e objetivos estão sendo seguidos corretamente.</p>
+                    </div>
+                </li>
+                <li>
+                    <button class="accordion">Treinamentos</button>
+                    <div class="panel">
+                        <p>Conduzir ou coordenar treinamentos com a equipe de atendimento, focando em melhorias contínuas.</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Sexta-feira -->
+        <div class="day">
+            <h2>Sexta-feira</h2>
+            <ul class="task-list">
+                <li>
+                    <button class="accordion">Resolver Demandas Pendentes</button>
+                    <div class="panel">
+                        <p>Aproveitar o dia para resolver todas as demandas que não puderam ser resolvidas durante a semana.</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2024 Cronograma Semanal de Tarefas - Organize suas tarefas com eficiência!</p>
+    </footer>
+
+    <script>
+        // Script para ativar a funcionalidade do acordeão
+        var acc = document.getElementsByClassName("accordion");
+        for (var i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var panel = this.nextElementSibling;
+                if (panel.style.display === "block") {
+                    panel.style.display = "none";
+                } else {
+                    panel.style.display = "block";
+                }
+            });
+        }
+    </script>
+
+</body>
+</html>
