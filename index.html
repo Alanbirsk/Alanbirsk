@@ -1,235 +1,308 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Área de Trabalho</title>
+    <title>Alan Birsk</title>
     <style>
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f5f5f5;
+            background-color: #e8f5e9; /* Fundo claro de verde */
         }
-        #login {
-            width: 90%;
-            max-width: 400px;
-            background-color: #ffffff;
-            padding: 20px;
-            border-radius: 15px;
-            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
-            margin: 100px auto;
+
+        /* Tela de login */
+        .login-container {
             display: flex;
-            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #c8e6c9; /* Cor de fundo mais clara para login */
+            position: relative;
         }
-        .login-input {
-            width: calc(100% - 20px);
-            padding: 10px;
-            margin: 10px 0;
-            border: 1px solid #ccc;
-            border-radius: 8px;
+
+        /* Logo no fundo da tela de login */
+        .login-container::before {
+            content: "";
+            background-image: url('https://via.placeholder.com/200'); /* Imagem da logo */
+            background-size: contain;
+            background-repeat: no-repeat;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0.1; /* Logo com opacidade para ficar suave ao fundo */
+            width: 200px;
+            height: 200px;
         }
-        .login-button {
+
+        .login-box {
+            background-color: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 300px;
+            z-index: 1; /* Garante que o login fique em cima da logo */
+        }
+
+        .login-box h2 {
+            margin-bottom: 20px;
+            color: #388e3c; /* Cor verde escuro */
+        }
+
+        .login-box input {
             width: 100%;
             padding: 10px;
-            background: linear-gradient(to bottom, #66bb6a, #43a047);
-            color: #ffffff;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .login-box button {
+            width: 100%;
+            padding: 10px;
+            background-color: #388e3c; /* Cor verde escuro */
+            color: white;
             border: none;
-            border-radius: 8px;
-            font-size: 16px;
+            border-radius: 5px;
             cursor: pointer;
         }
-        #site {
-            display: none; /* Inicialmente oculto */
+
+        .login-box button:hover {
+            background-color: #1b4d32; /* Verde mais escuro no hover */
         }
+
+        /* Conteúdo */
+        .content {
+            display: none; /* Oculta o conteúdo inicialmente */
+            padding: 20px;
+            margin: 20px;
+            background-color: white;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
         header {
-            background-color: #2E7D32; /* Verde escuro */
+            background-color: #66bb6a; /* Verde claro para o cabeçalho */
+            padding: 20px;
             color: white;
             display: flex;
             align-items: center;
-            padding: 15px 20px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 1000;
+            justify-content: space-between; /* Ajusta a disposição */
+            width: 100%;
         }
+
+        /* Logo e nome da empresa alinhados à esquerda */
+        .logo {
+            display: flex;
+            align-items: center;
+            font-size: 24px;
+            font-weight: bold;
+            color: white;
+            padding: 10px;
+            border-radius: 5px; /* Adiciona borda arredondada */
+            border: 2px solid #388e3c; /* Borda verde escura fixa */
+        }
+
         .logo img {
-            height: 60px;
-            margin-right: 20px;
-            border-radius: 5px;
+            width: 40px;
+            height: 40px;
+            margin-right: 10px;
         }
-        nav {
-            position: relative;
-            margin-left: auto;
-        }
+
+        /* Menu de botões com 3 colunas, ocupando toda a largura */
         .menu {
             display: flex;
-            list-style: none;
-            margin: 0;
-            padding: 0;
+            justify-content: space-between;
+            width: 60%; /* Menor largura para os botões */
+            max-width: 100%;
+            margin-left: 20px; /* Adiciona um pequeno espaçamento */
         }
-        .menu > li {
-            position: relative;
-            margin-left: 20px;
-        }
-        .menu > li > a {
-            text-decoration: none;
+
+        .menu a {
+            display: inline-block;
             color: white;
-            font-weight: bold;
+            padding: 14px;
+            text-align: center;
+            text-decoration: none;
+            background-color: #81c784; /* Verde mais claro */
+            border-radius: 5px;
+            width: 32%; /* Distribui igualmente os botões */
+            box-sizing: border-box;
+            margin-right: 1cm; /* Adiciona o espaço de 1cm entre os botões */
+        }
+
+        .menu a:hover {
+            background-color: #66bb6a; /* Verde mais escuro no hover */
+        }
+
+        .menu a.selected {
+            background-color: #388e3c; /* Cor verde escuro para o botão selecionado */
+            font-weight: bold; /* Deixa o texto mais forte para destacar */
+            border: 2px solid #fff; /* Borda branca para dar destaque */
+        }
+
+        .menu a:last-child {
+            margin-right: 0; /* Remove a margem do último botão */
+        }
+
+        /* Divisão em colunas */
+        .content-sections {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        .content-sections section {
+            width: 100%;
+            background-color: #c8e6c9; /* Verde muito claro */
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            display: none;
+        }
+
+        .content-sections section.active {
+            display: block;
+        }
+
+        section h2 {
+            color: #388e3c; /* Verde escuro para os títulos */
+        }
+
+        /* Botões dentro das seções em 3 colunas */
+        .button-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* 3 colunas */
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .button-link {
             padding: 10px 20px;
-            border-radius: 5px;
-            transition: background-color 0.3s;
-        }
-        .menu > li > a:hover {
-            background-color: #1B5E20;
-        }
-        .submenu {
-            display: none; /* Escondido por padrão */
-            position: absolute;
-            background-color: #2E7D32;
-            padding: 10px 0;
-            border-radius: 5px;
-            z-index: 1;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-        }
-        .menu > li:hover .submenu {
-            display: block;
-        }
-        .submenu a {
+            background-color: #66bb6a; /* Verde claro */
             color: white;
-            padding: 8px 15px;
-            display: block;
             text-decoration: none;
-            text-transform: capitalize;
-        }
-        .submenu a:hover {
-            background-color: #1B5E20;
-        }
-        .main-content {
-            padding: 80px 20px 20px;
+            border-radius: 5px;
             text-align: center;
         }
-        h1 {
-            color: #2E7D32;
+
+        .button-link:hover {
+            background-color: #388e3c; /* Verde escuro no hover */
         }
-        #conteudo {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
-            padding: 20px;
-        }
-        .custom-button {
-            display: block;
-            color: #ffffff;
-            background: linear-gradient(to bottom, #66bb6a, #43a047);
-            height: 100px;
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 16px;
-            font-weight: bold;
-            text-decoration: none;
-            text-transform: uppercase;
-            transition: background 0.3s;
-        }
-        .custom-button:hover {
-            background: linear-gradient(to bottom, #43a047, #66bb6a);
-        }
+
     </style>
 </head>
 <body>
 
-    <div id="login">
-        <h1>Login</h1>
-        <form id="login-form">
-            <input type="text" id="username" class="login-input" placeholder="Usuário" required>
-            <input type="password" id="password" class="login-input" placeholder="Senha" required>
-            <button type="submit" class="login-button">Entrar</button>
-        </form>
+    <!-- Tela de login -->
+    <div class="login-container" id="login-container">
+        <div class="login-box">
+            <h2>Login</h2>
+            <form id="login-form">
+                <input type="text" id="username" placeholder="Usuário" required>
+                <input type="password" id="password" placeholder="Senha" required>
+                <button type="submit">Entrar</button>
+            </form>
+        </div>
     </div>
 
-    <div id="site">
+    <!-- Conteúdo -->
+    <div class="content" id="content-container">
         <header>
-            <div class="logo">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBNXDpjIO04GdT9f0i1AoKisFJ8sDT-z5kWw&s" alt="Logotipo">
+            <!-- Logo e nome da empresa alinhados à esquerda -->
+            <div class="logo" id="logo">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBNXDpjIO04GdT9f0i1AoKisFJ8sDT-z5kWw&s" alt="Logo">
+                <span>Bitz softwares</span>
             </div>
-            <nav>
-                <ul class="menu">
-                    <li>
-                        <a href="#home">Processos</a>
-                        <ul class="submenu">
-                            <li><a href="./downsell" target="_blank">Downsell</a></li>
-                            <li><a href="./retenção.html" target="_blank">Retenção</a></li>
-                            <li><a href="./csat" target="_blank">CSAT</a></li>
-                            <li><a href="./inadimplencia" target="_blank">Inadimplência</a></li>
-                            <li><a href="./semaforo" target="_blank">Semáforo</a></li>
-                            <li><a href="./Atribuições do suporte.html" target="_blank">Suporte</a></li>
-                            <li><a href="./detrator" target="_blank">Detrator</a></li>
-                            <li><a href="./cancelamento" target="_blank">Cancelamento</a></li>
-                            <li><a href="./treinamentos.html" target="_blank">Treinamentos</a></li>
-                            <li><a href="./Planejamento diario.html" target="_blank">Planejamento diario</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#formulario">Avaliação</a>
-                        <ul class="submenu">
-                            <li><a href="formulario.html" target="_blank">Avaliação</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </nav>
+
+            <!-- Menu com 3 colunas -->
+            <div class="menu">
+                <a href="#destbord" onclick="showSection('destbord')" id="destbord-btn">Dastbord</a>
+                <a href="#suporte" onclick="showSection('suporte')" id="suporte-btn">Suporte</a>
+                <a href="#sucesso" onclick="showSection('sucesso')" id="sucesso-btn">Sucesso do Cliente</a>
+                <a href="#consultoria" onclick="showSection('consultoria')" id="consultoria-btn">Consultoria</a>
+            </div>
         </header>
-        <div class="main-content">
-            <h1>Bem-vindo!</h1>
-            <p>Explore nossos processos.</p>
-        </div>
-        <div id="conteudo">
-            <!-- Botões de conteúdo -->
-            <a href="https://docs.google.com/spreadsheets/d/19k1nKnLzrXAmLdSPphH_p_xIgpVnLujO/edit#gid=1787020901" target="_blank" class="custom-button">Avaliações WhatsApp</a>
-            <a href="https://docs.google.com/spreadsheets/d/1ejto2QQFjBnABaj3R5wwlMiP5c7x08sh/edit#gid=1787020901" target="_blank" class="custom-button">Folgas</a>
-            <a href="https://docs.google.com/spreadsheets/d/1qMIKnnzRAJakXkNDPnAoaCxEUSVyJwYw9eAlA5ATLRQ/edit?usp=sharing" target="_blank" class="custom-button">Resumo Bonificações</a>
-            <a href="https://docs.google.com/spreadsheets/d/1S3Bk91Ouk4qIT2yBMWgXyCawZfdnpTrW/edit#gid=1350182970" target="_blank" class="custom-button">Escala</a>
-            <a href="https://docs.google.com/document/d/1rOFzYs6iKaIXoT9BQ6-DlZWLe7ZuMnp65SqwUYlDpP8/edit" target="_blank" class="custom-button">Atribuições NI</a>
-            <a href="https://docs.google.com/document/d/1eRvdfIMM8l394qDSBMs4OegYg6_4Bp48GK0BOJIfxGs/edit" target="_blank" class="custom-button">Atribuições N2</a>
-            <a href="https://docs.google.com/spreadsheets/d/1nxTN1QdcecjYeAZjDKKvdg_lX_1LTLViQs0Z2hqm9lQ/edit?gid=244591961#gid=244591961" target="_blank" class="custom-button">CS Cancelamentos/Retenção</a>
-            <a href="https://drive.google.com/file/d/1jvt4HGYhMR4IndSs2IsD02-CT5NYmqW_/view?usp=sharing" target="_blank" class="custom-button">Atendimento</a>
-            <a href="https://docs.google.com/document/d/1Z7tm3pzoS6OXyxlGiXpIizSHRWrXkzQzgZ0-Bi-v7hU/edit?usp=sharing" target="_blank" class="custom-button">Performance</a>
-            <a href="http://painel.bitzsoftwares.com.br/login" target="_blank" class="custom-button">Painel</a>
-            <a href="https://docs.google.com/document/d/1xOYtKI-LYDkNQN_n3LFWWNZ_YDVj0FhQXJpUBDU8tnI/edit" target="_blank" class="custom-button">Playbook Suporte</a>
-            <a href="https://docs.google.com/document/d/1uN3QjEzoQRQvb6GmhzoQ34AKeeI1mXLeSOAzoGZ2L_w/edit" target="_blank" class="custom-button">Bonificações</a>
-            <a href="https://docs.google.com/document/d/1xvIKREEojWC9f4qWBeD28lT2VpenduKeXD1josabqGg/edit" target="_blank" class="custom-button">Reuniões</a>
-            <a href="https://docs.google.com/document/d/1o0N_i6QFx6rGNwAAFsfabF7ovZRRXHM3/edit" target="_blank" class="custom-button">Playbook CS</a>
-            <a href="https://docs.google.com/spreadsheets/d/14D249Mwj1dOxL5ZrhoMcAh6CzM4Yv1XxGyY7ZzkP3iI/edit?usp=sharing" target="_blank" class="custom-button">Indicadores Individuais</a>
-            <a href="https://docs.google.com/spreadsheets/d/1EqBbbJguWioA_N-Arid_tROeuU4hFvIwDVFG0oQmqpg/edit?usp=sharing" target="_blank" class="custom-button">Alta prioridade</a>
-            <a href="https://docs.google.com/document/d/1ReR2jK60KWPjz-5et0o86-ttJXBGp5PmyrzBVcRf_WE/edit?usp=sharing" target="_blank" class="custom-button">Roteiro de Atendimento</a>
-            <a href="https://docs.google.com/document/d/16qOWiLckmQtt71i_HTLYyI-iQxlZHUznl6zIOnwwpF8/edit?usp=sharing" target="_blank" class="custom-button">Processo de Retenção</a>
-            <a href="https://docs.google.com/spreadsheets/d/1Pr0vGx_RUMYD6mzG1I2wOZRukwdFFBsQkECUNrc-0-0/edit?gid=2115529454#gid=2115529454" target="_blank" class="custom-button">NPS Ativo</a>
-            <a href="https://docs.google.com/document/d/1Ealu9lwB8svzkGi-gNpF2htBaHyWx0YiseKQVG7IOs0/edit" target="_blank" class="custom-button">Configuração Guia de Motéis</a>
-            <a href="https://docs.google.com/spreadsheets/d/1kGrZ_hMF9muk81ZWhEWXxokkFuoPurQZmzN7s0n4q3I/edit?gid=0#gid=0" target="_blank" class="custom-button">KPI's</a>
-            <a href="https://docs.google.com/spreadsheets/d/1-QX2Bugv5avneQyGQIHKO2tSNBlfk-pRoYTQtGx7WO8/edit?usp=sharing" target="_blank" class="custom-button">top clientes/ atendiemntos</a>
-            <a href="https://docs.google.com/spreadsheets/d/1-QX2Bugv5avneQyGQIHKO2tSNBlfk-pRoYTQtGx7WO8/edit?usp=sharing" target="_blank" class="custom-button">top clientes/ atendiemntos</a>
-        
-        </div>
+
+        <div class="content-sections">
+            <!-- Seção Dastbord --> 
+            <section id="dastbord">
+                <h2>Dastbord</h2>
+                <div class="button-container">
+                   
+                </div>
+            </section>
+            <!-- Seção Suporte -->
+            <section id="suporte" class="active">
+                <h2>Suporte</h2>
+                <div class="button-container">
+                    <a href="https://docs.google.com/spreadsheets/d/1S3Bk91Ouk4qIT2yBMWgXyCawZfdnpTrW/edit?gid=1350182970#gid=1350182970" class="button-link" target="_blank">Escala</a>
+                    <a href="https://docs.google.com/spreadsheets/d/1ejto2QQFjBnABaj3R5wwlMiP5c7x08sh/edit#gid=1787020901" class="button-link" target="_blank">Folgas</a>
+                    <a href="https://docs.google.com/spreadsheets/d/1-QX2Bugv5avneQyGQIHKO2tSNBlfk-pRoYTQtGx7WO8/edit?gid=0#gid=0" class="button-link" target="_blank">Clientes com mais Atendimentos na semana</a>
+					<a href="https://docs.google.com/document/d/1ReR2jK60KWPjz-5et0o86-ttJXBGp5PmyrzBVcRf_WE/edit?tab=t.0" class="button-link" target="_blank">Roteiro de atendimento</a>
+                    <a href="https://www.exemplo.com/suporte2https://docs.google.com/spreadsheets/d/14D249Mwj1dOxL5ZrhoMcAh6CzM4Yv1XxGyY7ZzkP3iI/edit?gid=0#gid=0" class="button-link" target="_blank">Indicadores individuais</a>
+                    <a href="https://docs.google.com/document/d/1eRvdfIMM8l394qDSBMs4OegYg6_4Bp48GK0BOJIfxGs/edit?tab=t.0" class="button-link" target="_blank">Atribuições N2</a>
+					<a href="https://docs.google.com/document/d/1rOFzYs6iKaIXoT9BQ6-DlZWLe7ZuMnp65SqwUYlDpP8/edit?tab=t.0" class="button-link" target="_blank">Atribuições N1</a>
+                    <a href="https://docs.google.com/document/d/1Ealu9lwB8svzkGi-gNpF2htBaHyWx0YiseKQVG7IOs0/edit?tab=t.0" class="button-link" target="_blank">Configurações guia de moteis</a>
+                    <a href="https://docs.google.com/document/d/1ItmkMdguGqB4_UqvcyHh2j0RH0He5uHQyk-0gQ6ZhVg/edit?tab=t.0" class="button-link" target="_blank">Treinamentos em video</a>
+					<a href="https://docs.google.com/document/d/1ncuchlTDTJbONQdXIpYDKsbQm2gYTNE0/edit" class="button-link" target="_blank">Relação de bonificações </a>
+                </div>
+            </section>
+
+            <!-- Seção Sucesso do Cliente -->
+            <section id="sucesso">
+                <h2>Sucesso do Cliente</h2>
+                <div class="button-container">
+                    <a href="https://docs.google.com/spreadsheets/d/1Oj6gbl0-6svHT-sJwOiRifP2eRGfE9CgxOAsLjPqxCc/edit?gid=1311697092#gid=1311697092" class="button-link" target="_blank">Inadimpencia</a>
+                    <a href="https://www.exemplo.com/sucesso2" class="button-link" target="_blank">Semaforo</a>
+                    <a href="https://www.exemplo.com/sucesso3" class="button-link" target="_blank">Retenção</a>
+					<a href="https://www.exemplo.com/sucesso3" class="button-link" target="_blank">NPS</a>
+					<a href="https://www.exemplo.com/sucesso3" class="button-link" target="_blank">CSAT</a>
+                </div>
+            </section>
+
+            <!-- Seção Consultoria -->
+            <section id="consultoria">
+                <h2>Consultoria</h2>
+                <div class="button-container">
+                    <a href="https://docs.google.com/spreadsheets/d/1ChNuS0elLmZqQpZGWtx8VVTvtsIg35fq6mAEiUdA7JM/edit?gid=733466467#gid=733466467" class="button-link" target="_blank">Upsell</a>
+					<a href="https://reports-admin.bitzsoftwares.com.br/public/dashboard/a8e885eb-072f-47e5-b594-37d2d7c0751d" class="button-link" target="_blank">Bases liberadas</a>
+					<a href="https://docs.google.com/spreadsheets/d/1V-Gp02MAnsFZIA5PlXF9Tin3RGZ9XxomXg5FovZwENM/edit?gid=380820660#gid=380820660" class="button-link" target="_blank">Controle de bonificações</a>
+                    <a href="https://docs.google.com/spreadsheets/d/1E4du4jgyRntzWfOLX6O6gAOPjrD34viXs96MAUQdnnU/edit?gid=1412209014#gid=1412209014" class="button-link" target="_blank">Vendas</a>
+                    <a href="https://docs.google.com/spreadsheets/d/1MUmgn9iOkT8h0pgvU-OgxqrxHPxwcouj6HekwpGIS0w/edit?gid=0#gid=0" class="button-link" target="_blank">Politica de bonificações</a>
+                </div>
+            </section>
+		</div>
     </div>
 
     <script>
-        document.getElementById('login-form').onsubmit = function(event) {
-            event.preventDefault();
-            const username = document.getElementById('username').value;
-            const password = document.getElementById('password').value;
+        // Controle de exibição das seções
+        function showSection(sectionId) {
+            const sections = document.querySelectorAll('.content-sections section');
+            sections.forEach(section => {
+                section.classList.remove('active');
+            });
+            document.getElementById(sectionId).classList.add('active');
 
-            // Verificação de credenciais (exemplo simples)
-            if (username === 'admin' && password === '123') {
-                document.getElementById('login').style.display = 'none';
-                document.getElementById('site').style.display = 'block';
-            } else {
-                alert('Usuário ou senha incorretos. Tente novamente.');
-            }
-        };
+            // Destacar o botão selecionado no menu
+            const buttons = document.querySelectorAll('.menu a');
+            buttons.forEach(button => {
+                button.classList.remove('selected');
+            });
+            const selectedButton = document.querySelector(`#${sectionId}-btn`);
+            selectedButton.classList.add('selected');
+        }
+
+        // Login de usuário
+        document.getElementById('login-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            document.getElementById('login-container').style.display = 'none';
+            document.getElementById('content-container').style.display = 'block';
+        });
     </script>
-
 </body>
 </html>
