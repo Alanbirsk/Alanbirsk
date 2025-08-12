@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Fluxo de Implantação — Bitz Softwares</title>
+  <style>
+    :root{
+      --azul-bitz:#0b3550; /* tom principal azul */
+      --preto:#0b0b0b;
+      --cinza:#6b7280;
+      --branco:#ffffff;
+      --fundo:#f8fafc;
+      --max-width:720px; /* largura visual na tela */
+      --accent:#0b3550;
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+    html,body{height:100%;margin:0;background:var(--fundo);color:var(--preto)}
+    .page{max-width:var(--max-width);margin:20px auto;padding:28px;background:var(--branco);box-shadow:0 8px 30px rgba(3,10,18,0.08);border-radius:12px}
+    header{display:flex;align-items:center;gap:16px}
+    .logo{width:56px;height:56px;border-radius:8px;background:linear-gradient(180deg,var(--azul-bitz),#123a52);display:flex;align-items:center;justify-content:center;color:white;font-weight:700}
+    h1{font-size:22px;margin:0;color:var(--azul-bitz)}
+    p.lead{margin:8px 0 18px;color:var(--cinza)}
+
+    /* timeline */
+    .timeline{display:flex;flex-direction:column;gap:18px}
+    .step{display:grid;grid-template-columns:56px 1fr;gap:18px;align-items:start;padding:18px;border-radius:10px;border:1px solid #e6e9ee}
+    .num{width:56px;height:56px;border-radius:12px;background:var(--azul-bitz);color:white;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:20px}
+    .card h2{margin:0;font-size:16px;color:var(--preto)}
+    .card ul{margin:8px 0 0 18px;color:var(--preto)}
+    .muted{color:var(--cinza);font-size:14px}
+
+    /* special blocks */
+    .block-note{background:#fbfdff;border-left:6px solid var(--azul-bitz);padding:12px;border-radius:6px;color:var(--preto)}
+
+    footer{display:flex;justify-content:space-between;align-items:center;margin-top:18px}
+    .cta{background:var(--azul-bitz);color:white;padding:10px 14px;border-radius:8px;border:none;cursor:pointer}
+    .small{font-size:13px;color:var(--cinza)}
+
+    /* responsive */
+    @media (max-width:420px){:root{--max-width:360px} .page{padding:18px} h1{font-size:20px}}
+
+    /* print-friendly */
+    @media print{
+      body{background:white}
+      .page{box-shadow:none;margin:0;border-radius:0}
+      .cta{display:none}
+    }
+  </style>
+</head>
+<body>
+  <div class="page" id="page">
+    <header>
+      <div class="logo">B</div>
+      <div>
+        <h1>Fluxo de Implantação — Bitz Softwares</h1>
+        <p class="lead">Visão completa do processo desde o pré-início até o acompanhamento pós-fechamento.</p>
+      </div>
+    </header>
+
+    <main class="timeline" role="main">
+
+      <section class="step">
+        <div class="num">Pré</div>
+        <div class="card">
+          <h2>Pré-Início</h2>
+          <ul>
+            <li>Após o ganho ser assinado, a automação cria um ticket no <strong>Movidesk</strong>.</li>
+            <li>Coordenador de implantação atualiza os dados da conta no ticket e realiza o primeiro contato com o cliente — boas-vindas e informação da data prevista de finalização.</li>
+            <li>Criação de grupo de WhatsApp para centralizar comunicações (P.O. do hotel, equipe do hotel, consultor de implantação e Agente de CS).</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="step">
+        <div class="num">1</div>
+        <div class="card">
+          <h2>Primeira Reunião — Validação de Contrato & Setup/Configuração</h2>
+          <ul>
+            <li>Validar módulos contratados.</li>
+            <li>Configurações iniciais: cadastro de quartos, classificações, tarifas, usuários, parâmetros operacionais, financeiros e de estoque.</li>
+            <li>Definição do cronograma de treinamentos junto ao cliente.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="step">
+        <div class="num">2</div>
+        <div class="card">
+          <h2>Treinamentos</h2>
+          <ul>
+            <li><strong>1º Front Office</strong> — toda a equipe de recepção deve participar.</li>
+            <li><strong>2º Financeiro</strong> — toda a equipe que irá operar o financeiro deve participar.</li>
+            <li><strong>3º Estoque / Compras</strong></li>
+            <li><strong>4º</strong> Demais módulos conforme necessidade.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="step">
+        <div class="num">3</div>
+        <div class="card">
+          <h2>Avaliação Intermediária (após treinamento de Front)</h2>
+          <ul>
+            <li>CS faz contato para avaliar conexão, didática e identificar possíveis conflitos.</li>
+            <li>Se houver entraves, CS sinaliza ao Gestor de Implantação — ações: realinhamento comercial, troca de consultor ou cancelamento.</li>
+            <li>Se tudo OK, o processo segue.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="step">
+        <div class="num">4</div>
+        <div class="card">
+          <h2>Pré-Virada → Virada → Pós-Virada</h2>
+          <ul>
+            <li><strong>Pré-Virada:</strong> uso com dados fictícios para testes.</li>
+            <li><strong>Virada:</strong> consultor limpa movimentações e ativa uso com dados reais.</li>
+            <li><strong>Pós-Virada:</strong> acompanhamento do consultor preparando para o fechamento.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="step">
+        <div class="num">5</div>
+        <div class="card">
+          <h2>Avaliação Final (antes do fechamento)</h2>
+          <ul>
+            <li>CS valida se o cliente está apto (site, motor, fiscal e demais funcionalidades).</li>
+            <li>Se necessário: ajustes pelo consultor e possíveis reuniões de tira-dúvidas.</li>
+            <li>Aprovado: envio do <strong>Termo de Fechamento da Implantação</strong>.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="step">
+        <div class="num">6</div>
+        <div class="card">
+          <h2>Pós-Fechamento (CS ativo + Suporte 24/7)</h2>
+          <ul>
+            <li>Acompanhamento do CS nos primeiros 60 dias: contatos em <strong>+7 dias, +30 dias e +60 dias</strong>.</li>
+            <li>Após 60 dias: contatos com espaçamento maior, mantendo assistência contínua.</li>
+            <li>Suporte técnico <strong>24/7</strong> via chat, telefone e WhatsApp.</li>
+            <li>Observação: durante a implantação o consultor é o ponto de apoio principal; o acesso ao suporte 24/7 inicia após o fechamento.</li>
+            <li>Ao final da implantação o grupo de WhatsApp será encerrado; o cliente continuará a ser assistido pelo CS.</li>
+          </ul>
+        </div>
+      </section>
+
+    </main>
+
+    <div style="height:18px"></div>
+
+    <footer>
+      <div class="small">Gerado para: Bitz Softwares</div>
+      <div>
+        <button class="cta" onclick="window.print()">Imprimir / Salvar como PDF</button>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Nota: abra este arquivo no navegador e use 'Imprimir' para salvar em PDF/PNG. -->
+</body>
+</html>
