@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Manual de Implantação - Stone</title>
+<link href="https://unpkg.com/feather-icons" rel="stylesheet">
+<style>
+  body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    background: #f8f9fa;
+    color: #1f2937;
+    margin: 0;
+    padding: 0;
+  }
+  .container {
+    max-width: 950px;
+    margin: 50px auto;
+    padding: 0 20px;
+  }
+  h1 {
+    text-align: center;
+    font-size: 2.4rem;
+    margin-bottom: 50px;
+    font-weight: 700;
+    color: #111827;
+  }
+
+  /* Timeline */
+  .timeline {
+    position: relative;
+    padding-left: 50px;
+  }
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 25px;
+    width: 4px;
+    height: 100%;
+    background: #3b82f6;
+    border-radius: 2px;
+  }
+  .event {
+    position: relative;
+    margin-bottom: 50px;
+  }
+  .circle {
+    position: absolute;
+    left: 12px;
+    width: 26px;
+    height: 26px;
+    background: #fff;
+    border: 4px solid #3b82f6;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .circle svg {
+    width: 14px;
+    height: 14px;
+    color: #3b82f6;
+  }
+  .content {
+    background: #fff;
+    padding: 25px 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    margin-left: 50px;
+    position: relative;
+  }
+  .content h2 {
+    margin-top: 0;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #111827;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .content p {
+    margin: 10px 0;
+    line-height: 1.6;
+    color: #374151;
+  }
+  .details {
+    display: none;
+    margin-top: 10px;
+  }
+  .details ul {
+    padding-left: 20px;
+  }
+  .details li {
+    margin-bottom: 6px;
+  }
+  .details a {
+    color: #1e40af;
+    text-decoration: underline;
+  }
+  .toggle-btn {
+    background: none;
+    border: none;
+    color: #3b82f6;
+    cursor: pointer;
+    font-size: 0.95rem;
+    margin-bottom: 10px;
+    padding: 0;
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <h1>Manual de Implantação - Integração Stone</h1>
+
+  <div class="timeline">
+
+    <!-- Pré-Início -->
+    <div class="event">
+      <div class="circle">
+        <i data-feather="clock"></i>
+      </div>
+      <div class="content">
+        <h2>Pré-Início</h2>
+        <p>Primeiros passos antes da implantação efetiva.</p>
+        <button class="toggle-btn" onclick="toggleDetails(this)">Ver detalhes</button>
+        <div class="details">
+          <ul>
+            <li>Automação cria o ticket no Movidesk.</li>
+            <li>Coordenador atualiza os dados da conta.</li>
+            <li>Primeiro contato com cliente (boas-vindas e data prevista).</li>
+            <li>Indicação do cliente à Stone: <a href="https://app.pipefy.com/public/form/JvcC9XwE" target="_blank">Formulário Pipefy</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Cadastro Stone -->
+    <div class="event">
+      <div class="circle">
+        <i data-feather="user"></i>
+      </div>
+      <div class="content">
+        <h2>Cadastro Stone</h2>
+        <p>Cadastro do cliente para uso das transações Stone.</p>
+        <button class="toggle-btn" onclick="toggleDetails(this)">Ver detalhes</button>
+        <div class="details">
+          <ul>
+            <li>Máquina física (Connect): <a href="https://partnerhub.stone.com.br/#/lp-client/bitz" target="_blank">PartnerHub</a> — selecionar terminal "Aluguel".</li>
+            <li>Transações online (Gateway): <a href="https://www.pagar.me/" target="_blank">Pagar.me</a> — selecionar terminal "E-commerce".</li>
+            <li>Contato comercial para upsell da integração: <strong>Luiza — (46) 99107-2468</strong></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Implantação -->
+    <div class="event">
+      <div class="circle">
+        <i data-feather="settings"></i>
+      </div>
+      <div class="content">
+        <h2>Implantação</h2>
+        <p>Configuração no Bitz e liberação das APIs.</p>
+        <button class="toggle-btn" onclick="toggleDetails(this)">Ver detalhes</button>
+        <div class="details">
+          <ul>
+            <li>Abrir ticket com macro 'Ativação Stone' → responsável: Deyse</li>
+            <li>Enviar StoneCode e CNPJ</li>
+            <li>Ativar API no PartnerHub (Connect) ou Pagar.me (Gateway)</li>
+            <li>Consultoria repassa dados ao produto (Giovani) para liberação no painel</li>
+            <li>Aplicação baixa no POS em até 3h após liberação</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Testes & Configuração -->
+    <div class="event">
+      <div class="circle">
+        <i data-feather="check-square"></i>
+      </div>
+      <div class="content">
+        <h2>Testes & Configuração</h2>
+        <p>Validar pagamentos, PIX e operadoras.</p>
+        <button class="toggle-btn" onclick="toggleDetails(this)">Ver detalhes</button>
+        <div class="details">
+          <ul>
+            <li>Cadastrar terminal POS e operadora STONE</li>
+            <li>Criar forma de pagamento padrão para PIX Stone no Bitz</li>
+            <li>Verificar chave PIX cadastrada no app Stone</li>
+            <li>POS ligado e conectado ao Wi-Fi/3G</li>
+            <li>Verificar função de pedidos ativada na máquina Smart</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Go-Live & Suporte -->
+    <div class="event">
+      <div class="circle">
+        <i data-feather="life-buoy"></i>
+      </div>
+      <div class="content">
+        <h2>Go-Live & Suporte</h2>
+        <p>Cliente em produção, acompanhamento e resolução de problemas.</p>
+        <button class="toggle-btn" onclick="toggleDetails(this)">Ver detalhes</button>
+        <div class="details">
+          <ul>
+            <li>Testes finais de recebimento e conciliação</li>
+            <li>Resolver falhas POSConnect (atualizar POS, reiniciar se necessário)</li>
+            <li>Acompanhamento do uso e feedback do cliente</li>
+            <li>Encaminhamento para Customer Success</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script src="https://unpkg.com/feather-icons"></script>
+<script>
+  feather.replace();
+  function toggleDetails(btn){
+    const details = btn.nextElementSibling;
+    if(details.style.display === 'block'){
+      details.style.display = 'none';
+      btn.textContent = 'Ver detalhes';
+    } else {
+      details.style.display = 'block';
+      btn.textContent = 'Ocultar detalhes';
+    }
+  }
+</script>
+
+</body>
+</html>
