@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Manual Detalhado de Implantação — Bitz Softwares (2025)</title>
+  <style>
+    :root{
+      --bg:#f6fbff; /* very soft blue */
+      --card:#ffffff;
+      --accent:#106fa8; /* bitz blue deep */
+      --accent-2:#3aa0d6;
+      --muted:#6b7c8a;
+      --glass:rgba(255,255,255,0.7);
+      --shadow: 0 6px 20px rgba(16,111,168,0.08);
+      --radius:12px;
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+    html,body{height:100%; margin:0; background:linear-gradient(180deg,var(--bg),#eef7fc); color:#0b2540}
+    .container{max-width:1100px;margin:28px auto;padding:28px}
+    header{display:flex;align-items:center;gap:18px}
+    header img{height:56px}
+    header h1{font-size:20px;margin:0}
+    .meta{color:var(--muted);font-size:13px}
+
+    .card{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);padding:20px;margin-top:18px}
+    nav{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+    .pill{background:var(--glass);padding:8px 12px;border-radius:999px;font-weight:600;color:var(--accent)}
+
+    main{display:grid;grid-template-columns:1fr;gap:16px;margin-top:18px}
+
+    h2{color:var(--accent);margin:0 0 8px 0}
+    h3{margin:8px 0}
+    p{line-height:1.5;color:#123248}
+
+    table{width:100%;border-collapse:collapse;margin-top:8px}
+    th,td{padding:10px;border-bottom:1px solid #eef6fb;text-align:left}
+    th{background:linear-gradient(90deg,rgba(10,90,140,0.06),rgba(10,90,140,0.02));color:var(--accent)}
+
+    .two-col{display:grid;grid-template-columns:1fr 320px;gap:18px}
+    .side{position:sticky;top:28px}
+
+    .actions{display:flex;gap:8px;margin-top:12px}
+    .btn{background:var(--accent);color:white;padding:10px 14px;border-radius:10px;border:0;cursor:pointer;font-weight:600}
+    .btn.ghost{background:transparent;color:var(--accent);border:1px solid rgba(16,111,168,0.12)}
+
+    footer{margin-top:20px;color:var(--muted);font-size:13px}
+
+    @media(max-width:900px){.two-col{grid-template-columns:1fr}.side{position:static}}
+    @media print{body{background:white} .actions, nav, footer{display:none} header img{height:48px}}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <img src="https://bitzsoftwares.com.br/wp-content/uploads/2025/04/horizontal-2-1-2048x1152.png" alt="Logo Bitz Softwares" />
+      <div>
+        <h1>Manual Detalhado de Implantação — Bitz Softwares</h1>
+        <div class="meta">Versão 2025 • Modelo oficial de implantação (Instrutor de Treinamento e Especialista Técnico)</div>
+      </div>
+    </header>
+
+    <nav>
+      <div class="pill">Visão Geral</div>
+      <div class="pill">Papéis</div>
+      <div class="pill">Fases</div>
+      <div class="pill">Entregáveis</div>
+      <div class="pill">Finalização</div>
+    </nav>
+
+    <div class="card two-col">
+      <section>
+        <article class="card">
+          <h2>1. Visão Geral da Implantação</h2>
+          <p>A implantação do sistema Bitz é liderada pelo <strong>Instrutor de Treinamento (Consultor de Implantação)</strong>, com apoio direto do <strong>Especialista Técnico</strong>. O objetivo é garantir que o cliente receba um sistema ajustado à sua realidade, com todos os usuários capacitados para operar de forma eficiente.</p>
+        </article>
+
+        <article class="card">
+          <h2>2. Papel do Instrutor de Treinamento (Consultor Responsável)</h2>
+          <p>O <strong>Instrutor de Treinamento</strong>, também chamado de <strong>Consultor de Implantação</strong>, é o <strong>responsável final pela implantação</strong>. Ele coordena todas as etapas do processo, desde o levantamento inicial até a entrega final, organizando a comunicação com o cliente e acionando o Especialista Técnico sempre que necessário.</p>
+
+          <h3>Atividades do Consultor</h3>
+          <ul>
+            <li>Captação de informações com o cliente: entrevistas, reuniões, mapeamento de processos e regras de negócio.</li>
+            <li>Análise de aderência: identificação do que precisa ser adaptado entre a operação do cliente e os recursos do sistema.</li>
+            <li>Documentação de escopo: elaboração de fluxogramas, mapeamentos e orientações para parametrização.</li>
+            <li>Planejamento do projeto: definição de prazos, marcos e cronograma da implantação.</li>
+            <li>Repasse ao Especialista Técnico: envio de documentação para parametrização e acompanhamento da execução.</li>
+            <li>Planejamento e aplicação dos treinamentos: definição de cronograma, materiais e capacitação dos usuários.</li>
+            <li>Acompanhamento de feedbacks e ajustes: identificação de falhas, dúvidas ou necessidades adicionais.</li>
+            <li>Validação final e encerramento: realização da reunião de fechamento com o cliente e CS.</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h2>3. Papel do Especialista Técnico</h2>
+          <p>O <strong>Especialista Técnico</strong> é responsável por executar as <strong>configurações e parametrizações</strong> do sistema com base no escopo definido pelo Consultor. Ele trabalha nos bastidores, garantindo que o sistema esteja alinhado com as necessidades operacionais mapeadas.</p>
+
+          <h3>Atividades do Especialista Técnico</h3>
+          <ul>
+            <li>Recebimento do escopo técnico do Consultor</li>
+            <li>Configuração e parametrização do sistema</li>
+            <li>Ajustes finos com base em testes internos</li>
+            <li>Criação de manuais técnicos, quando necessário</li>
+            <li>Suporte ao Consultor durante treinamentos</li>
+            <li>Aplicação de correções ou melhorias identificadas</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h2>4. Fases do Processo de Implantação</h2>
+          <table>
+            <thead>
+              <tr><th>Fase</th><th>Responsável Principal</th><th>Descrição</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Levantamento e captação de requisitos</td><td>Instrutor de Treinamento</td><td>Mapeamento completo da operação e necessidades do cliente</td></tr>
+              <tr><td>Análise de aderência e escopo</td><td>Instrutor de Treinamento</td><td>Verificação da compatibilidade entre sistema e operação</td></tr>
+              <tr><td>Parametrização do sistema</td><td>Especialista Técnico</td><td>Execução das configurações e testes iniciais</td></tr>
+              <tr><td>Criação de documentação técnica</td><td>Consultor + Especialista</td><td>Elaboração de fluxos, manuais, orientações</td></tr>
+              <tr><td>Planejamento de treinamento</td><td>Instrutor de Treinamento</td><td>Criação de cronograma e materiais</td></tr>
+              <tr><td>Treinamento dos usuários</td><td>Instrutor de Treinamento</td><td>Capacitação prática dos usuários finais</td></tr>
+              <tr><td>Feedbacks e ajustes</td><td>Ambos</td><td>Aplicação de melhorias e ajustes conforme uso real</td></tr>
+              <tr><td>Validação e encerramento</td><td>Instrutor + CS + Especialista</td><td>Fechamento da implantação com validação final</td></tr>
+            </tbody>
+          </table>
+        </article>
+
+        <article class="card">
+          <h2>5. Entregáveis por Papel</h2>
+          <h3>Instrutor de Treinamento (Consultor Responsável)</h3>
+          <ul>
+            <li>Documentação de escopo</li>
+            <li>Cronograma de implantação</li>
+            <li>Materiais de treinamento (slides, vídeos, apostilas)</li>
+            <li>Roteiros por setor ou usuário</li>
+            <li>Registro de presença</li>
+            <li>Avaliação de desempenho e aprendizado</li>
+            <li>Relatório final de implantação</li>
+          </ul>
+
+          <h3>Especialista Técnico</h3>
+          <ul>
+            <li>Configurações no sistema</li>
+            <li>Parametrizações conforme escopo</li>
+            <li>Relatórios técnicos de testes</li>
+            <li>Suporte durante o treinamento</li>
+            <li>Manual técnico (se aplicável)</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h2>6. Alinhamento de Responsabilidades</h2>
+          <table>
+            <thead><tr><th>Etapa</th><th>Instrutor (Consultor)</th><th>Especialista Técnico</th></tr></thead>
+            <tbody>
+              <tr><td>Mapeamento de processos</td><td>✅</td><td>—</td></tr>
+              <tr><td>Análise de aderência</td><td>✅</td><td>—</td></tr>
+              <tr><td>Parametrização do sistema</td><td>—</td><td>✅</td></tr>
+              <tr><td>Criação de fluxos/documentação</td><td>✅</td><td>✅</td></tr>
+              <tr><td>Planejamento do treinamento</td><td>✅</td><td>—</td></tr>
+              <tr><td>Aplicação do treinamento</td><td>✅</td><td>Apoio técnico</td></tr>
+              <tr><td>Correções e ajustes técnicos</td><td>Solicita</td><td>✅</td></tr>
+              <tr><td>Validação e encerramento</td><td>✅</td><td>✅</td></tr>
+            </tbody>
+          </table>
+        </article>
+
+        <article class="card">
+          <h2>7. Finalização da Implantação</h2>
+          <ul>
+            <li>Treinamento aplicado com sucesso</li>
+            <li>Ajustes técnicos implementados</li>
+            <li>Cliente validando que está operando de forma satisfatória</li>
+            <li>Documento de <strong>Fechamento da Implantação</strong> assinado (interna ou externamente)</li>
+            <li>Transição para suporte e CS</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h2>8. Considerações Finais</h2>
+          <p>A Bitz Softwares adota este modelo para assegurar que a implantação seja <strong>estruturada, eficiente e padronizada</strong>, com cada profissional atuando de forma complementar.</p>
+          <blockquote> A <strong>liderança da implantação</strong> é do <strong>Instrutor de Treinamento</strong>, enquanto o <strong>Especialista Técnico</strong> garante a execução técnica impecável do sistema.</blockquote>
+        </article>
+      </section>
+
+      <aside class="side">
+        <div class="card">
+          <h3>Ações</h3>
+          <div class="actions">
+            <button class="btn" onclick="window.print()">Imprimir / Gerar PDF</button>
+            <button class="btn ghost" onclick="location.href='#'">Editar no sistema</button>
+          </div>
+
+          <h3 style="margin-top:16px">Download</h3>
+          <p class="meta">Clique em "Salvar como..." no diálogo de impressão para gerar um PDF. Para baixar este HTML, salve a página no seu navegador.</p>
+        </div>
+
+        <div class="card">
+          <h3>Versão &amp; Créditos</h3>
+          <p class="meta">Versão 2025 • Bitz Softwares — Todos os direitos reservados.</p>
+        </div>
+      </aside>
+    </div>
+
+    <footer class="meta">© 2025 Bitz Softwares</footer>
+  </div>
+</body>
+</html>
