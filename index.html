@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Gestão de Demandas - Bitz Softwares</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
@@ -59,11 +59,11 @@
     </header>
 
     <!-- Main Content -->
-    <main class="container mx-auto px-6 py-8 space-y-8">
+    <main class="container mx-auto max-w-7xl px-6 py-8 space-y-8">
       <div class="grid grid-cols-3 gap-6">
 
-        <!-- Cards de Implantação -->
-        <div class="bg-white rounded-2xl shadow-md p-6 hover:shadow-xl transition-transform transform hover:-translate-y-1">
+        <!-- Card Implantação -->
+        <div class="bg-white rounded-2xl shadow-md p-6 hover:shadow-xl transition-transform transform hover:-translate-y-1 w-full min-w-0">
           <div class="flex items-center gap-3 mb-4">
             <div class="p-3 rounded-full bg-blue-100">
               <i data-lucide="target" class="h-8 w-8 text-blue-700"></i>
@@ -72,24 +72,34 @@
           </div>
           <p class="text-gray-500 mb-6">Gestão de implantações</p>
           <div class="space-y-3">
-           <a href="manual stone.HTML" target="_blank" 
-           class="w-full flex justify-between items-center px-6 py-4 rounded-3xl bg-gradient-to-r from-blue-600 to-blue-400 text-white font-semibold shadow-lg hover:scale-105 transition duration-150">
-           Manual Stone<i data-lucide="arrow-right"></i> </a>
-          
-          <div class="space-y-3">
-           <a href="Implantação em duas etapas.html" target="_blank" 
-           class="w-full flex justify-between items-center px-6 py-4 rounded-3xl bg-gradient-to-r from-blue-600 to-blue-400 text-white font-semibold shadow-lg hover:scale-105 transition duration-150">
-           Implantação novo<i data-lucide="arrow-right"></i> </a>
-            <button class="w-full flex justify-between items-center px-6 py-4 rounded-3xl bg-gradient-to-r from-blue-600 to-blue-400 text-white font-semibold shadow-lg hover:scale-105 transition duration-150" onclick="abrirPagina('/implantacao/bonificacoes')">Bonificações <i data-lucide="arrow-right"></i></button>
-            <button class="w-full flex justify-between items-center px-6 py-4 rounded-3xl bg-gradient-to-r from-blue-500 to-blue-300 text-white font-semibold shadow-lg hover:scale-105 transition duration-150" onclick="abrirPagina('/implantacao/processo')">Processo <i data-lucide="arrow-right"></i></button>
-            <button class="w-full flex justify-between items-center px-6 py-4 rounded-3xl bg-gradient-to-r from-blue-400 to-blue-200 text-white font-semibold shadow-lg hover:scale-105 transition duration-150" onclick="abrirPagina('/implantacao/relatorios')">Relatórios <i data-lucide="arrow-right"></i></button>
-            <button class="w-full flex justify-between items-center px-6 py-4 rounded-3xl bg-gradient-to-r from-blue-700 to-blue-500 text-white font-semibold shadow-lg hover:scale-105 transition duration-150" onclick="abrirPagina('/implantacao/indicadores')">Indicadores <i data-lucide="arrow-right"></i></button>
-            <button class="w-full flex justify-between items-center px-6 py-4 rounded-3xl bg-gradient-to-r from-blue-600 to-blue-400 text-white font-semibold shadow-lg hover:scale-105 transition duration-150" onclick="abrirPagina('/implantacao/documentos')">Documentos <i data-lucide="arrow-right"></i></button>
+            <a href="manual stone.HTML" target="_blank" 
+              class="w-full flex justify-between items-center px-6 py-4 rounded-3xl bg-gradient-to-r from-blue-600 to-blue-400 text-white font-semibold shadow-lg hover:scale-105 transition duration-150">
+              Manual Stone <i data-lucide="arrow-right"></i>
+            </a>
+            <a href="Implantação em duas etapas.html" target="_blank" 
+              class="w-full flex justify-between items-center px-6 py-4 rounded-3xl bg-gradient-to-r from-blue-600 to-blue-400 text-white font-semibold shadow-lg hover:scale-105 transition duration-150">
+              Implantação novo <i data-lucide="arrow-right"></i>
+            </a>
+            <button class="w-full flex justify-between items-center px-6 py-4 rounded-3xl bg-gradient-to-r from-blue-600 to-blue-400 text-white font-semibold shadow-lg hover:scale-105 transition duration-150" onclick="abrirPagina('/implantacao/bonificacoes')">
+              Bonificações <i data-lucide="arrow-right"></i>
+            </button>
+            <button class="w-full flex justify-between items-center px-6 py-4 rounded-3xl bg-gradient-to-r from-blue-500 to-blue-300 text-white font-semibold shadow-lg hover:scale-105 transition duration-150" onclick="abrirPagina('/implantacao/processo')">
+              Processo <i data-lucide="arrow-right"></i>
+            </button>
+            <button class="w-full flex justify-between items-center px-6 py-4 rounded-3xl bg-gradient-to-r from-blue-400 to-blue-200 text-white font-semibold shadow-lg hover:scale-105 transition duration-150" onclick="abrirPagina('/implantacao/relatorios')">
+              Relatórios <i data-lucide="arrow-right"></i>
+            </button>
+            <button class="w-full flex justify-between items-center px-6 py-4 rounded-3xl bg-gradient-to-r from-blue-700 to-blue-500 text-white font-semibold shadow-lg hover:scale-105 transition duration-150" onclick="abrirPagina('/implantacao/indicadores')">
+              Indicadores <i data-lucide="arrow-right"></i>
+            </button>
+            <button class="w-full flex justify-between items-center px-6 py-4 rounded-3xl bg-gradient-to-r from-blue-600 to-blue-400 text-white font-semibold shadow-lg hover:scale-105 transition duration-150" onclick="abrirPagina('/implantacao/documentos')">
+              Documentos <i data-lucide="arrow-right"></i>
+            </button>
           </div>
         </div>
 
-        <!-- Suporte -->
-        <div class="bg-white rounded-2xl shadow-md p-6 hover:shadow-xl transition-transform transform hover:-translate-y-1">
+        <!-- Card Suporte -->
+        <div class="bg-white rounded-2xl shadow-md p-6 hover:shadow-xl transition-transform transform hover:-translate-y-1 w-full min-w-0">
           <div class="flex items-center gap-3 mb-4">
             <div class="p-3 rounded-full bg-blue-100">
               <i data-lucide="wrench" class="h-8 w-8 text-blue-700"></i>
@@ -98,17 +108,29 @@
           </div>
           <p class="text-gray-500 mb-6">Gestão de atendimento</p>
           <div class="space-y-3">
-            <button class="w-full flex justify-between items-center px-6 py-4 rounded-3xl bg-gradient-to-r from-blue-700 to-blue-500 text-white font-semibold shadow-lg hover:scale-105 transition duration-150" onclick="abrirPagina('/suporte/tickets')">Tickets <i data-lucide="arrow-right"></i></button>
-            <button class="w-full flex justify-between items-center px-6 py-4 rounded-3xl bg-gradient-to-r from-blue-600 to-blue-400 text-white font-semibold shadow-lg hover:scale-105 transition duration-150" onclick="abrirPagina('/suporte/chat')">Chat <i data-lucide="arrow-right"></i></button>
-            <button class="w-full flex justify-between items-center px-6 py-4 rounded-3xl bg-gradient-to-r from-blue-500 to-blue-300 text-white font-semibold shadow-lg hover:scale-105 transition duration-150" onclick="abrirPagina('/suporte/faq')">FAQ <i data-lucide="arrow-right"></i></button>
-            <button class="w-full flex justify-between items-center px-6 py-4 rounded-3xl bg-gradient-to-r from-blue-700 to-blue-500 text-white font-semibold shadow-lg hover:scale-105 transition duration-150" onclick="abrirPagina('/suporte/relatorios')">Relatórios <i data-lucide="arrow-right"></i></button>
-            <button class="w-full flex justify-between items-center px-6 py-4 rounded-3xl bg-gradient-to-r from-blue-600 to-blue-400 text-white font-semibold shadow-lg hover:scale-105 transition duration-150" onclick="abrirPagina('/suporte/indicadores')">Indicadores <i data-lucide="arrow-right"></i></button>
-            <button class="w-full flex justify-between items-center px-6 py-4 rounded-3xl bg-gradient-to-r from-blue-500 to-blue-300 text-white font-semibold shadow-lg hover:scale-105 transition duration-150" onclick="abrirPagina('/suporte/documentos')">Documentos <i data-lucide="arrow-right"></i></button>
+            <button class="w-full flex justify-between items-center px-6 py-4 rounded-3xl bg-gradient-to-r from-blue-700 to-blue-500 text-white font-semibold shadow-lg hover:scale-105 transition duration-150" onclick="abrirPagina('/suporte/tickets')">
+              Tickets <i data-lucide="arrow-right"></i>
+            </button>
+            <button class="w-full flex justify-between items-center px-6 py-4 rounded-3xl bg-gradient-to-r from-blue-600 to-blue-400 text-white font-semibold shadow-lg hover:scale-105 transition duration-150" onclick="abrirPagina('/suporte/chat')">
+              Chat <i data-lucide="arrow-right"></i>
+            </button>
+            <button class="w-full flex justify-between items-center px-6 py-4 rounded-3xl bg-gradient-to-r from-blue-500 to-blue-300 text-white font-semibold shadow-lg hover:scale-105 transition duration-150" onclick="abrirPagina('/suporte/faq')">
+              FAQ <i data-lucide="arrow-right"></i>
+            </button>
+            <button class="w-full flex justify-between items-center px-6 py-4 rounded-3xl bg-gradient-to-r from-blue-700 to-blue-500 text-white font-semibold shadow-lg hover:scale-105 transition duration-150" onclick="abrirPagina('/suporte/relatorios')">
+              Relatórios <i data-lucide="arrow-right"></i>
+            </button>
+            <button class="w-full flex justify-between items-center px-6 py-4 rounded-3xl bg-gradient-to-r from-blue-600 to-blue-400 text-white font-semibold shadow-lg hover:scale-105 transition duration-150" onclick="abrirPagina('/suporte/indicadores')">
+              Indicadores <i data-lucide="arrow-right"></i>
+            </button>
+            <button class="w-full flex justify-between items-center px-6 py-4 rounded-3xl bg-gradient-to-r from-blue-500 to-blue-300 text-white font-semibold shadow-lg hover:scale-105 transition duration-150" onclick="abrirPagina('/suporte/documentos')">
+              Documentos <i data-lucide="arrow-right"></i>
+            </button>
           </div>
         </div>
 
-        <!-- Sucesso do Cliente -->
-        <div class="bg-white rounded-2xl shadow-md p-6 hover:shadow-xl transition-transform transform hover:-translate-y-1">
+        <!-- Card Sucesso do Cliente -->
+        <div class="bg-white rounded-2xl shadow-md p-6 hover:shadow-xl transition-transform transform hover:-translate-y-1 w-full min-w-0">
           <div class="flex items-center gap-3 mb-4">
             <div class="p-3 rounded-full bg-blue-100">
               <i data-lucide="users" class="h-8 w-8 text-blue-700"></i>
@@ -117,12 +139,24 @@
           </div>
           <p class="text-gray-500 mb-6">Gestão de CS</p>
           <div class="space-y-3">
-            <button class="w-full flex justify-between items-center px-6 py-4 rounded-3xl bg-gradient-to-r from-blue-700 to-blue-500 text-white font-semibold shadow-lg hover:scale-105 transition duration-150" onclick="abrirPagina('/sucesso/health-score')">Health Score <i data-lucide="arrow-right"></i></button>
-            <button class="w-full flex justify-between items-center px-6 py-4 rounded-3xl bg-gradient-to-r from-blue-600 to-blue-400 text-white font-semibold shadow-lg hover:scale-105 transition duration-150" onclick="abrirPagina('/sucesso/renovacoes')">Renovações <i data-lucide="arrow-right"></i></button>
-            <button class="w-full flex justify-between items-center px-6 py-4 rounded-3xl bg-gradient-to-r from-blue-500 to-blue-300 text-white font-semibold shadow-lg hover:scale-105 transition duration-150" onclick="abrirPagina('/sucesso/upselling')">Upselling <i data-lucide="arrow-right"></i></button>
-            <button class="w-full flex justify-between items-center px-6 py-4 rounded-3xl bg-gradient-to-r from-blue-700 to-blue-500 text-white font-semibold shadow-lg hover:scale-105 transition duration-150" onclick="abrirPagina('/sucesso/relatorios')">Relatórios <i data-lucide="arrow-right"></i></button>
-            <button class="w-full flex justify-between items-center px-6 py-4 rounded-3xl bg-gradient-to-r from-blue-600 to-blue-400 text-white font-semibold shadow-lg hover:scale-105 transition duration-150" onclick="abrirPagina('/sucesso/indicadores')">Indicadores <i data-lucide="arrow-right"></i></button>
-            <button class="w-full flex justify-between items-center px-6 py-4 rounded-3xl bg-gradient-to-r from-blue-500 to-blue-300 text-white font-semibold shadow-lg hover:scale-105 transition duration-150" onclick="abrirPagina('/sucesso/documentos')">Documentos <i data-lucide="arrow-right"></i></button>
+            <button class="w-full flex justify-between items-center px-6 py-4 rounded-3xl bg-gradient-to-r from-blue-700 to-blue-500 text-white font-semibold shadow-lg hover:scale-105 transition duration-150" onclick="abrirPagina('/sucesso/health-score')">
+              Health Score <i data-lucide="arrow-right"></i>
+            </button>
+            <button class="w-full flex justify-between items-center px-6 py-4 rounded-3xl bg-gradient-to-r from-blue-600 to-blue-400 text-white font-semibold shadow-lg hover:scale-105 transition duration-150" onclick="abrirPagina('/sucesso/renovacoes')">
+              Renovações <i data-lucide="arrow-right"></i>
+            </button>
+            <button class="w-full flex justify-between items-center px-6 py-4 rounded-3xl bg-gradient-to-r from-blue-500 to-blue-300 text-white font-semibold shadow-lg hover:scale-105 transition duration-150" onclick="abrirPagina('/sucesso/upselling')">
+              Upselling <i data-lucide="arrow-right"></i>
+            </button>
+            <button class="w-full flex justify-between items-center px-6 py-4 rounded-3xl bg-gradient-to-r from-blue-700 to-blue-500 text-white font-semibold shadow-lg hover:scale-105 transition duration-150" onclick="abrirPagina('/sucesso/relatorios')">
+              Relatórios <i data-lucide="arrow-right"></i>
+            </button>
+            <button class="w-full flex justify-between items-center px-6 py-4 rounded-3xl bg-gradient-to-r from-blue-600 to-blue-400 text-white font-semibold shadow-lg hover:scale-105 transition duration-150" onclick="abrirPagina('/sucesso/indicadores')">
+              Indicadores <i data-lucide="arrow-right"></i>
+            </button>
+            <button class="w-full flex justify-between items-center px-6 py-4 rounded-3xl bg-gradient-to-r from-blue-500 to-blue-300 text-white font-semibold shadow-lg hover:scale-105 transition duration-150" onclick="abrirPagina('/sucesso/documentos')">
+              Documentos <i data-lucide="arrow-right"></i>
+            </button>
           </div>
         </div>
 
