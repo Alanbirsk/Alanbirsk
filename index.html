@@ -1,81 +1,203 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Central de Documentos</title>
-  <script src="https://unpkg.com/lucide@latest"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gestão de Demandas - Bitz Softwares</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+  <style>
+    @keyframes shake {
+      0%, 100% { transform: translateX(0); }
+      20%, 60% { transform: translateX(-10px); }
+      40%, 80% { transform: translateX(10px); }
+    }
+    .shake {
+      animation: shake 0.4s;
+    }
+  </style>
 </head>
-<body class="bg-gray-100 min-h-screen flex flex-col items-center p-6">
-  <header class="mb-10 text-center">
-    <h1 class="text-4xl font-bold text-blue-700 mb-2">📚 Central de Documentos</h1>
-    <p class="text-gray-600">Acesse manuais, relatórios e indicadores de forma rápida</p>
-  </header>
+<body class="min-h-screen bg-gray-500 text-gray-900 font-sans">
 
-  <main class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full max-w-7xl">
-
-    <!-- Card Implantação -->
-    <div class="bg-white rounded-2xl shadow-md p-6 hover:shadow-xl transition-transform transform hover:-translate-y-1 w-full min-w-0">
-      <div class="flex items-center gap-3 mb-4">
-        <div class="p-3 rounded-full bg-blue-100">
-          <i data-lucide="target" class="h-8 w-8 text-blue-700"></i>
+  <!-- Tela de Login -->
+  <div id="loginScreen" class="flex items-center justify-center min-h-screen">
+    <div class="bg-gray-200 p-10 rounded-3xl shadow-2xl w-full max-w-md border border-gray-300">
+      <div class="flex justify-center mb-6">
+        <img src="https://bitzsoftwares.com.br/wp-content/uploads/2025/04/horizontal-2-1-2048x1152.png" alt="Logo Bitz" class="h-24 w-auto" />
+      </div>
+      <h2 class="text-3xl font-bold text-blue-600 mb-6 text-center">Login</h2>
+      <form id="loginForm" class="space-y-4">
+        <div>
+          <label class="block text-gray-700 mb-1">Usuário</label>
+          <input type="text" id="username" class="w-full px-4 py-3 rounded-xl border border-gray-300 bg-gray-50 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-400" required />
         </div>
-        <h3 class="text-xl font-semibold text-blue-900">Implantação</h3>
-      </div>
-      <p class="text-gray-500 mb-6">Gestão de implantações</p>
-      <div class="space-y-3">
-        <a href="Manual-stone.html" target="_blank" class="w-full flex justify-between items-center px-6 py-4 rounded-3xl bg-gradient-to-r from-blue-600 to-blue-400 text-white font-semibold shadow-lg hover:scale-105 transition duration-150">Manual Stone <i data-lucide="arrow-right"></i></a>
-        <a href="Implantacao-em-duas-etapas-novo.html" target="_blank" class="w-full flex justify-between items-center px-6 py-4 rounded-3xl bg-gradient-to-r from-blue-600 to-blue-400 text-white font-semibold shadow-lg hover:scale-105 transition duration-150">Implantação Novo <i data-lucide="arrow-right"></i></a>
-        <a href="bonificacoes.html" target="_blank" class="w-full flex justify-between items-center px-6 py-4 rounded-3xl bg-gradient-to-r from-blue-600 to-blue-400 text-white font-semibold shadow-lg hover:scale-105 transition duration-150">Bonificações <i data-lucide="arrow-right"></i></a>
-        <a href="Manual-operacao-suporte-consultoria.html" target="_blank" class="w-full flex justify-between items-center px-6 py-4 rounded-3xl bg-gradient-to-r from-blue-500 to-blue-300 text-white font-semibold shadow-lg hover:scale-105 transition duration-150">Suporte da Implantação <i data-lucide="arrow-right"></i></a>
-        <a href="relatorios.html" target="_blank" class="w-full flex justify-between items-center px-6 py-4 rounded-3xl bg-gradient-to-r from-blue-400 to-blue-200 text-white font-semibold shadow-lg hover:scale-105 transition duration-150">Relatórios <i data-lucide="arrow-right"></i></a>
-        <a href="indicadores.html" target="_blank" class="w-full flex justify-between items-center px-6 py-4 rounded-3xl bg-gradient-to-r from-blue-700 to-blue-500 text-white font-semibold shadow-lg hover:scale-105 transition duration-150">Indicadores <i data-lucide="arrow-right"></i></a>
-        <a href="documentos.html" target="_blank" class="w-full flex justify-between items-center px-6 py-4 rounded-3xl bg-gradient-to-r from-blue-600 to-blue-400 text-white font-semibold shadow-lg hover:scale-105 transition duration-150">Documentos <i data-lucide="arrow-right"></i></a>
-      </div>
-    </div>
-
-    <!-- Card Suporte -->
-    <div class="bg-white rounded-2xl shadow-md p-6 hover:shadow-xl transition-transform transform hover:-translate-y-1 w-full min-w-0">
-      <div class="flex items-center gap-3 mb-4">
-        <div class="p-3 rounded-full bg-green-100">
-          <i data-lucide="headphones" class="h-8 w-8 text-green-700"></i>
+        <div>
+          <label class="block text-gray-700 mb-1">Senha</label>
+          <input type="password" id="password" class="w-full px-4 py-3 rounded-xl border border-gray-300 bg-gray-50 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-400" required />
         </div>
-        <h3 class="text-xl font-semibold text-green-900">Suporte</h3>
-      </div>
-      <p class="text-gray-500 mb-6">Documentos e manuais de suporte</p>
-      <div class="space-y-3">
-        <a href="suporte-operacional.html" target="_blank" class="w-full flex justify-between items-center px-6 py-4 rounded-3xl bg-gradient-to-r from-green-600 to-green-400 text-white font-semibold shadow-lg hover:scale-105 transition duration-150">Suporte Operacional <i data-lucide="arrow-right"></i></a>
-        <a href="faq.html" target="_blank" class="w-full flex justify-between items-center px-6 py-4 rounded-3xl bg-gradient-to-r from-green-500 to-green-300 text-white font-semibold shadow-lg hover:scale-105 transition duration-150">FAQ <i data-lucide="arrow-right"></i></a>
-        <a href="tutoriais.html" target="_blank" class="w-full flex justify-between items-center px-6 py-4 rounded-3xl bg-gradient-to-r from-green-700 to-green-500 text-white font-semibold shadow-lg hover:scale-105 transition duration-150">Tutoriais <i data-lucide="arrow-right"></i></a>
-      </div>
+        <button type="submit" class="w-full bg-blue-500 hover:bg-blue-600 active:bg-blue-700 text-white py-3 rounded-2xl font-semibold transition duration-150">Entrar</button>
+      </form>
+      <p id="errorMsg" class="text-red-500 mt-4 hidden text-center"></p>
     </div>
+  </div>
 
-    <!-- Card Customer Success -->
-    <div class="bg-white rounded-2xl shadow-md p-6 hover:shadow-xl transition-transform transform hover:-translate-y-1 w-full min-w-0">
-      <div class="flex items-center gap-3 mb-4">
-        <div class="p-3 rounded-full bg-purple-100">
-          <i data-lucide="smile" class="h-8 w-8 text-purple-700"></i>
+  <!-- Dashboard -->
+  <div id="dashboard" class="hidden">
+
+    <!-- Header com logo -->
+    <header class="bg-white shadow-md border-b border-gray-300 px-6 py-4 flex justify-between items-center">
+      <div class="flex items-center gap-4">
+        <img src="https://bitzsoftwares.com.br/wp-content/uploads/2025/04/horizontal-2-1-2048x1152.png" alt="Logo Bitz" class="h-20 w-auto rounded-md" />
+        <div>
+          <h1 class="text-3xl font-bold text-blue-900">Gestão de Experiência do Cliente</h1>
+          <p class="text-gray-600">Centralize e gerencie todas as demandas da sua operação</p>
         </div>
-        <h3 class="text-xl font-semibold text-purple-900">Customer Success</h3>
       </div>
-      <p class="text-gray-500 mb-6">Documentos e processos de CS</p>
-      <div class="space-y-3">
-        <a href="jornada-cliente.html" target="_blank" class="w-full flex justify-between items-center px-6 py-4 rounded-3xl bg-gradient-to-r from-purple-600 to-purple-400 text-white font-semibold shadow-lg hover:scale-105 transition duration-150">Jornada do Cliente <i data-lucide="arrow-right"></i></a>
-        <a href="playbook-cs.html" target="_blank" class="w-full flex justify-between items-center px-6 py-4 rounded-3xl bg-gradient-to-r from-purple-500 to-purple-300 text-white font-semibold shadow-lg hover:scale-105 transition duration-150">Playbook CS <i data-lucide="arrow-right"></i></a>
-        <a href="nps.html" target="_blank" class="w-full flex justify-between items-center px-6 py-4 rounded-3xl bg-gradient-to-r from-purple-700 to-purple-500 text-white font-semibold shadow-lg hover:scale-105 transition duration-150">NPS <i data-lucide="arrow-right"></i></a>
+      <button id="logoutBtn" class="flex items-center bg-blue-100 text-blue-800 px-3 py-1 rounded-full font-medium hover:bg-blue-200 transition">
+        <i data-lucide="log-out" class="w-4 h-4 mr-1"></i> Sair
+      </button>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-6 py-8 space-y-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        <!-- Cards de Implantação -->
+        <div class="bg-white rounded-2xl shadow-md p-6 hover:shadow-xl transition-transform transform hover:-translate-y-1">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="p-3 rounded-full bg-blue-100">
+              <i data-lucide="target" class="h-8 w-8 text-blue-700"></i>
+            </div>
+            <h3 class="text-xl font-semibold text-blue-900">Implantação</h3>
+          </div>
+         <p class="text-gray-500 mb-6">Gestão de implantações</p>
+<div class="space-y-3">
+
+  <!-- Modelo de botão -->
+  <button class="w-full flex justify-between items-center px-6 py-4 rounded-3xl 
+          bg-gradient-to-r from-blue-700 to-blue-500 text-white font-semibold shadow-lg 
+          hover:scale-105 transition duration-150" 
+          onclick="abrirPagina('Manual de operação suporte da consultoria.html')">
+    Consultoria-suporte <i data-lucide="arrow-right"></i>
+  </button>
+
+  <button class="w-full flex justify-between items-center px-6 py-4 rounded-3xl 
+          bg-gradient-to-r from-blue-600 to-blue-400 text-white font-semibold shadow-lg 
+          hover:scale-105 transition duration-150" 
+          onclick="abrirPagina('LINK_DO_BOTAO')">
+    NOME_DO_BOTAO <i data-lucide="arrow-right"></i>
+  </button>
+
+  <button class="w-full flex justify-between items-center px-6 py-4 rounded-3xl 
+          bg-gradient-to-r from-blue-500 to-blue-300 text-white font-semibold shadow-lg 
+          hover:scale-105 transition duration-150" 
+          onclick="abrirPagina('LINK_DO_BOTAO')">
+    NOME_DO_BOTAO <i data-lucide="arrow-right"></i>
+  </button>
+
+  <button class="w-full flex justify-between items-center px-6 py-4 rounded-3xl 
+          bg-gradient-to-r from-blue-400 to-blue-200 text-white font-semibold shadow-lg 
+          hover:scale-105 transition duration-150" 
+          onclick="abrirPagina('LINK_DO_BOTAO')">
+    NOME_DO_BOTAO <i data-lucide="arrow-right"></i>
+  </button>
+
+  <button class="w-full flex justify-between items-center px-6 py-4 rounded-3xl 
+          bg-gradient-to-r from-blue-700 to-blue-500 text-white font-semibold shadow-lg 
+          hover:scale-105 transition duration-150" 
+          onclick="abrirPagina('LINK_DO_BOTAO')">
+    NOME_DO_BOTAO <i data-lucide="arrow-right"></i>
+  </button>
+
+  <button class="w-full flex justify-between items-center px-6 py-4 rounded-3xl 
+          bg-gradient-to-r from-blue-600 to-blue-400 text-white font-semibold shadow-lg 
+          hover:scale-105 transition duration-150" 
+          onclick="abrirPagina('LINK_DO_BOTAO')">
+    NOME_DO_BOTAO <i data-lucide="arrow-right"></i>
+  </button>
+
+</div>
+        </div>
+
+        <!-- Suporte -->
+        <div class="bg-white rounded-2xl shadow-md p-6 hover:shadow-xl transition-transform transform hover:-translate-y-1">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="p-3 rounded-full bg-blue-100">
+              <i data-lucide="wrench" class="h-8 w-8 text-blue-700"></i>
+            </div>
+            <h3 class="text-xl font-semibold text-blue-900">Suporte</h3>
+          </div>
+          <p class="text-gray-500 mb-6">Gestão de atendimento</p>
+          <div class="space-y-3">
+            <button class="w-full flex justify-between items-center px-6 py-4 rounded-3xl bg-gradient-to-r from-blue-700 to-blue-500 text-white font-semibold shadow-lg hover:scale-105 transition duration-150" onclick="abrirPagina('/suporte/tickets')">Tickets <i data-lucide="arrow-right"></i></button>
+            <button class="w-full flex justify-between items-center px-6 py-4 rounded-3xl bg-gradient-to-r from-blue-600 to-blue-400 text-white font-semibold shadow-lg hover:scale-105 transition duration-150" onclick="abrirPagina('/suporte/chat')">Chat <i data-lucide="arrow-right"></i></button>
+            <button class="w-full flex justify-between items-center px-6 py-4 rounded-3xl bg-gradient-to-r from-blue-500 to-blue-300 text-white font-semibold shadow-lg hover:scale-105 transition duration-150" onclick="abrirPagina('/suporte/faq')">FAQ <i data-lucide="arrow-right"></i></button>
+            <button class="w-full flex justify-between items-center px-6 py-4 rounded-3xl bg-gradient-to-r from-blue-700 to-blue-500 text-white font-semibold shadow-lg hover:scale-105 transition duration-150" onclick="abrirPagina('/suporte/relatorios')">Relatórios <i data-lucide="arrow-right"></i></button>
+            <button class="w-full flex justify-between items-center px-6 py-4 rounded-3xl bg-gradient-to-r from-blue-600 to-blue-400 text-white font-semibold shadow-lg hover:scale-105 transition duration-150" onclick="abrirPagina('/suporte/indicadores')">Indicadores <i data-lucide="arrow-right"></i></button>
+            <button class="w-full flex justify-between items-center px-6 py-4 rounded-3xl bg-gradient-to-r from-blue-500 to-blue-300 text-white font-semibold shadow-lg hover:scale-105 transition duration-150" onclick="abrirPagina('/suporte/documentos')">Documentos <i data-lucide="arrow-right"></i></button>
+          </div>
+        </div>
+
+        <!-- Sucesso do Cliente -->
+        <div class="bg-white rounded-2xl shadow-md p-6 hover:shadow-xl transition-transform transform hover:-translate-y-1">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="p-3 rounded-full bg-blue-100">
+              <i data-lucide="users" class="h-8 w-8 text-blue-700"></i>
+            </div>
+            <h3 class="text-xl font-semibold text-blue-900">Sucesso do Cliente</h3>
+          </div>
+          <p class="text-gray-500 mb-6">Gestão de CS</p>
+          <div class="space-y-3">
+            <button class="w-full flex justify-between items-center px-6 py-4 rounded-3xl bg-gradient-to-r from-blue-700 to-blue-500 text-white font-semibold shadow-lg hover:scale-105 transition duration-150" onclick="abrirPagina('/sucesso/health-score')">Health Score <i data-lucide="arrow-right"></i></button>
+            <button class="w-full flex justify-between items-center px-6 py-4 rounded-3xl bg-gradient-to-r from-blue-600 to-blue-400 text-white font-semibold shadow-lg hover:scale-105 transition duration-150" onclick="abrirPagina('/sucesso/renovacoes')">Renovações <i data-lucide="arrow-right"></i></button>
+            <button class="w-full flex justify-between items-center px-6 py-4 rounded-3xl bg-gradient-to-r from-blue-500 to-blue-300 text-white font-semibold shadow-lg hover:scale-105 transition duration-150" onclick="abrirPagina('/sucesso/upselling')">Upselling <i data-lucide="arrow-right"></i></button>
+            <button class="w-full flex justify-between items-center px-6 py-4 rounded-3xl bg-gradient-to-r from-blue-700 to-blue-500 text-white font-semibold shadow-lg hover:scale-105 transition duration-150" onclick="abrirPagina('/sucesso/relatorios')">Relatórios <i data-lucide="arrow-right"></i></button>
+            <button class="w-full flex justify-between items-center px-6 py-4 rounded-3xl bg-gradient-to-r from-blue-600 to-blue-400 text-white font-semibold shadow-lg hover:scale-105 transition duration-150" onclick="abrirPagina('/sucesso/indicadores')">Indicadores <i data-lucide="arrow-right"></i></button>
+            <button class="w-full flex justify-between items-center px-6 py-4 rounded-3xl bg-gradient-to-r from-blue-500 to-blue-300 text-white font-semibold shadow-lg hover:scale-105 transition duration-150" onclick="abrirPagina('/sucesso/documentos')">Documentos <i data-lucide="arrow-right"></i></button>
+          </div>
+        </div>
+
       </div>
-    </div>
-
-  </main>
-
-  <footer class="mt-16 text-center text-gray-500 text-sm">
-    <p>&copy; 2025 - Central de Documentos</p>
-  </footer>
+    </main>
+  </div>
 
   <script>
     lucide.createIcons();
+
+    const loginForm = document.getElementById('loginForm');
+    const loginScreen = document.getElementById('loginScreen');
+    const dashboard = document.getElementById('dashboard');
+    const errorMsg = document.getElementById('errorMsg');
+    const logoutBtn = document.getElementById('logoutBtn');
+
+    loginForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
+
+      if(username === "Alan" && password === "789") {
+        loginScreen.classList.add('hidden');
+        dashboard.classList.remove('hidden');
+        errorMsg.classList.add('hidden');
+        loginScreen.classList.remove('shake');
+      } else {
+        errorMsg.textContent = "Usuário ou senha incorretos!";
+        errorMsg.classList.remove('hidden');
+        loginScreen.classList.add('shake');
+      }
+    });
+
+    logoutBtn.addEventListener('click', function() {
+      dashboard.classList.add('hidden');
+      loginScreen.classList.remove('hidden');
+      document.getElementById('username').value = '';
+      document.getElementById('password').value = '';
+    });
+
+    function abrirPagina(url) {
+      alert(`Abrindo página: ${url}`); // Simulação de navegação
+    }
   </script>
+
 </body>
 </html>
-
