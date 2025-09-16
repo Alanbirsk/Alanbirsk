@@ -12,9 +12,7 @@
       20%, 60% { transform: translateX(-10px); }
       40%, 80% { transform: translateX(10px); }
     }
-    .shake {
-      animation: shake 0.4s;
-    }
+    .shake { animation: shake 0.4s; }
   </style>
 </head>
 <body class="min-h-screen bg-gray-500 text-gray-900 font-sans">
@@ -44,7 +42,7 @@
   <!-- Dashboard -->
   <div id="dashboard" class="hidden">
 
-    <!-- Header com logo -->
+    <!-- Header -->
     <header class="bg-white shadow-md border-b border-gray-300 px-6 py-4 flex justify-between items-center">
       <div class="flex items-center gap-4">
         <img src="https://bitzsoftwares.com.br/wp-content/uploads/2025/04/horizontal-2-1-2048x1152.png" alt="Logo Bitz" class="h-20 w-auto rounded-md" />
@@ -63,7 +61,7 @@
       <div class="grid grid-cols-3 gap-6">
 
         <!-- Card Implantação -->
-        <div class="bg-white rounded-2xl shadow-md p-6 hover:shadow-xl transition-transform transform hover:-translate-y-1 w-full min-w-0">
+        <div class="bg-white rounded-2xl shadow-md p-6 hover:shadow-xl transition-transform transform hover:-translate-y-1">
           <div class="flex items-center gap-3 mb-4">
             <div class="p-3 rounded-full bg-blue-100">
               <i data-lucide="target" class="h-8 w-8 text-blue-700"></i>
@@ -72,35 +70,18 @@
           </div>
           <p class="text-gray-500 mb-6">Gestão de implantações</p>
           <div class="space-y-3">
-            <a href="manual stone.HTML" target="_blank" 
-              class="w-full flex justify-between items-center px-6 py-4 rounded-3xl bg-gradient-to-r from-blue-600 to-blue-400 text-white font-semibold shadow-lg hover:scale-105 transition duration-150">
-              Manual Stone <i data-lucide="arrow-right"></i>
-            </a>
-            <a href="Implantação em duas etapas novo.html" target="_blank" 
-              class="w-full flex justify-between items-center px-6 py-4 rounded-3xl bg-gradient-to-r from-blue-600 to-blue-400 text-white font-semibold shadow-lg hover:scale-105 transition duration-150">
-              Implantação novo <i data-lucide="arrow-right"></i>
-            </a>
-            <button class="w-full flex justify-between items-center px-6 py-4 rounded-3xl bg-gradient-to-r from-blue-600 to-blue-400 text-white font-semibold shadow-lg hover:scale-105 transition duration-150" onclick="abrirPagina('/implantacao/bonificacoes')">
-              Bonificações <i data-lucide="arrow-right"></i>
-            </button
-             <a href="Manual de operação suporte da consultoria.html" target="_blank" 
-            <button class="w-full flex justify-between items-center px-6 py-4 rounded-3xl bg-gradient-to-r from-blue-500 to-blue-300 text-white font-semibold shadow-lg hover:scale-105 transition duration-150" onclick="abrirPagina('/implantacao/processo')">
-              Suporte da implantação <i data-lucide="arrow-right"></i>
-            </button>
-            <button class="w-full flex justify-between items-center px-6 py-4 rounded-3xl bg-gradient-to-r from-blue-400 to-blue-200 text-white font-semibold shadow-lg hover:scale-105 transition duration-150" onclick="abrirPagina('/implantacao/relatorios')">
-              Relatórios <i data-lucide="arrow-right"></i>
-            </button>
-            <button class="w-full flex justify-between items-center px-6 py-4 rounded-3xl bg-gradient-to-r from-blue-700 to-blue-500 text-white font-semibold shadow-lg hover:scale-105 transition duration-150" onclick="abrirPagina('/implantacao/indicadores')">
-              Indicadores <i data-lucide="arrow-right"></i>
-            </button>
-            <button class="w-full flex justify-between items-center px-6 py-4 rounded-3xl bg-gradient-to-r from-blue-600 to-blue-400 text-white font-semibold shadow-lg hover:scale-105 transition duration-150" onclick="abrirPagina('/implantacao/documentos')">
-              Documentos <i data-lucide="arrow-right"></i>
-            </button>
+            <a href="manual-stone.html" target="_blank" class="link-btn">Manual Stone <i data-lucide="arrow-right"></i></a>
+            <a href="implantacao-novo.html" target="_blank" class="link-btn">Implantação novo <i data-lucide="arrow-right"></i></a>
+            <a href="bonificacoes.html" target="_blank" class="link-btn">Bonificações <i data-lucide="arrow-right"></i></a>
+            <a href="manual-operacao-suporte.html" target="_blank" class="link-btn">Suporte da implantação <i data-lucide="arrow-right"></i></a>
+            <a href="relatorios.html" target="_blank" class="link-btn">Relatórios <i data-lucide="arrow-right"></i></a>
+            <a href="indicadores.html" target="_blank" class="link-btn">Indicadores <i data-lucide="arrow-right"></i></a>
+            <a href="documentos.html" target="_blank" class="link-btn">Documentos <i data-lucide="arrow-right"></i></a>
           </div>
         </div>
 
         <!-- Card Suporte -->
-        <div class="bg-white rounded-2xl shadow-md p-6 hover:shadow-xl transition-transform transform hover:-translate-y-1 w-full min-w-0">
+        <div class="bg-white rounded-2xl shadow-md p-6 hover:shadow-xl transition-transform transform hover:-translate-y-1">
           <div class="flex items-center gap-3 mb-4">
             <div class="p-3 rounded-full bg-blue-100">
               <i data-lucide="wrench" class="h-8 w-8 text-blue-700"></i>
@@ -109,29 +90,17 @@
           </div>
           <p class="text-gray-500 mb-6">Gestão de atendimento</p>
           <div class="space-y-3">
-            <button class="w-full flex justify-between items-center px-6 py-4 rounded-3xl bg-gradient-to-r from-blue-700 to-blue-500 text-white font-semibold shadow-lg hover:scale-105 transition duration-150" onclick="abrirPagina('/suporte/tickets')">
-              Tickets <i data-lucide="arrow-right"></i>
-            </button>
-            <button class="w-full flex justify-between items-center px-6 py-4 rounded-3xl bg-gradient-to-r from-blue-600 to-blue-400 text-white font-semibold shadow-lg hover:scale-105 transition duration-150" onclick="abrirPagina('/suporte/chat')">
-              Chat <i data-lucide="arrow-right"></i>
-            </button>
-            <button class="w-full flex justify-between items-center px-6 py-4 rounded-3xl bg-gradient-to-r from-blue-500 to-blue-300 text-white font-semibold shadow-lg hover:scale-105 transition duration-150" onclick="abrirPagina('/suporte/faq')">
-              FAQ <i data-lucide="arrow-right"></i>
-            </button>
-            <button class="w-full flex justify-between items-center px-6 py-4 rounded-3xl bg-gradient-to-r from-blue-700 to-blue-500 text-white font-semibold shadow-lg hover:scale-105 transition duration-150" onclick="abrirPagina('/suporte/relatorios')">
-              Relatórios <i data-lucide="arrow-right"></i>
-            </button>
-            <button class="w-full flex justify-between items-center px-6 py-4 rounded-3xl bg-gradient-to-r from-blue-600 to-blue-400 text-white font-semibold shadow-lg hover:scale-105 transition duration-150" onclick="abrirPagina('/suporte/indicadores')">
-              Indicadores <i data-lucide="arrow-right"></i>
-            </button>
-            <button class="w-full flex justify-between items-center px-6 py-4 rounded-3xl bg-gradient-to-r from-blue-500 to-blue-300 text-white font-semibold shadow-lg hover:scale-105 transition duration-150" onclick="abrirPagina('/suporte/documentos')">
-              Documentos <i data-lucide="arrow-right"></i>
-            </button>
+            <a href="tickets.html" target="_blank" class="link-btn">Tickets <i data-lucide="arrow-right"></i></a>
+            <a href="chat.html" target="_blank" class="link-btn">Chat <i data-lucide="arrow-right"></i></a>
+            <a href="faq.html" target="_blank" class="link-btn">FAQ <i data-lucide="arrow-right"></i></a>
+            <a href="relatorios-suporte.html" target="_blank" class="link-btn">Relatórios <i data-lucide="arrow-right"></i></a>
+            <a href="indicadores-suporte.html" target="_blank" class="link-btn">Indicadores <i data-lucide="arrow-right"></i></a>
+            <a href="documentos-suporte.html" target="_blank" class="link-btn">Documentos <i data-lucide="arrow-right"></i></a>
           </div>
         </div>
 
         <!-- Card Sucesso do Cliente -->
-        <div class="bg-white rounded-2xl shadow-md p-6 hover:shadow-xl transition-transform transform hover:-translate-y-1 w-full min-w-0">
+        <div class="bg-white rounded-2xl shadow-md p-6 hover:shadow-xl transition-transform transform hover:-translate-y-1">
           <div class="flex items-center gap-3 mb-4">
             <div class="p-3 rounded-full bg-blue-100">
               <i data-lucide="users" class="h-8 w-8 text-blue-700"></i>
@@ -140,24 +109,12 @@
           </div>
           <p class="text-gray-500 mb-6">Gestão de CS</p>
           <div class="space-y-3">
-            <button class="w-full flex justify-between items-center px-6 py-4 rounded-3xl bg-gradient-to-r from-blue-700 to-blue-500 text-white font-semibold shadow-lg hover:scale-105 transition duration-150" onclick="abrirPagina('/sucesso/health-score')">
-              Health Score <i data-lucide="arrow-right"></i>
-            </button>
-            <button class="w-full flex justify-between items-center px-6 py-4 rounded-3xl bg-gradient-to-r from-blue-600 to-blue-400 text-white font-semibold shadow-lg hover:scale-105 transition duration-150" onclick="abrirPagina('/sucesso/renovacoes')">
-              Renovações <i data-lucide="arrow-right"></i>
-            </button>
-            <button class="w-full flex justify-between items-center px-6 py-4 rounded-3xl bg-gradient-to-r from-blue-500 to-blue-300 text-white font-semibold shadow-lg hover:scale-105 transition duration-150" onclick="abrirPagina('/sucesso/upselling')">
-              Upselling <i data-lucide="arrow-right"></i>
-            </button>
-            <button class="w-full flex justify-between items-center px-6 py-4 rounded-3xl bg-gradient-to-r from-blue-700 to-blue-500 text-white font-semibold shadow-lg hover:scale-105 transition duration-150" onclick="abrirPagina('/sucesso/relatorios')">
-              Relatórios <i data-lucide="arrow-right"></i>
-            </button>
-            <button class="w-full flex justify-between items-center px-6 py-4 rounded-3xl bg-gradient-to-r from-blue-600 to-blue-400 text-white font-semibold shadow-lg hover:scale-105 transition duration-150" onclick="abrirPagina('/sucesso/indicadores')">
-              Indicadores <i data-lucide="arrow-right"></i>
-            </button>
-            <button class="w-full flex justify-between items-center px-6 py-4 rounded-3xl bg-gradient-to-r from-blue-500 to-blue-300 text-white font-semibold shadow-lg hover:scale-105 transition duration-150" onclick="abrirPagina('/sucesso/documentos')">
-              Documentos <i data-lucide="arrow-right"></i>
-            </button>
+            <a href="health-score.html" target="_blank" class="link-btn">Health Score <i data-lucide="arrow-right"></i></a>
+            <a href="renovacoes.html" target="_blank" class="link-btn">Renovações <i data-lucide="arrow-right"></i></a>
+            <a href="upselling.html" target="_blank" class="link-btn">Upselling <i data-lucide="arrow-right"></i></a>
+            <a href="relatorios-cs.html" target="_blank" class="link-btn">Relatórios <i data-lucide="arrow-right"></i></a>
+            <a href="indicadores-cs.html" target="_blank" class="link-btn">Indicadores <i data-lucide="arrow-right"></i></a>
+            <a href="documentos-cs.html" target="_blank" class="link-btn">Documentos <i data-lucide="arrow-right"></i></a>
           </div>
         </div>
 
@@ -197,13 +154,26 @@
       document.getElementById('username').value = '';
       document.getElementById('password').value = '';
     });
-
-    function abrirPagina(url) {
-      alert(`Abrindo página: ${url}`); // Simulação de navegação
-    }
   </script>
+
+  <style>
+    .link-btn {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 1.5rem;
+      border-radius: 1.5rem;
+      background: linear-gradient(to right, #2563eb, #3b82f6);
+      color: white;
+      font-weight: 600;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      transition: transform 0.15s, box-shadow 0.15s;
+    }
+    .link-btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+    }
+  </style>
 
 </body>
 </html>
-
-
