@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Manual de Procedimentos - Bitz Softwares</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
+<style>
+:root {
+  --blue-primary: #005bbb;
+  --blue-secondary: #3399ff;
+  --blue-light: #66b3ff;
+  --gray-light: #f5f7fa;
+  --text-dark: #222;
+}
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--gray-light);
+  margin: 0;
+  padding: 20px;
+  color: var(--text-dark);
+}
+header {
+  display: flex;
+  align-items: center;
+  background: var(--blue-primary);
+  padding: 20px;
+  border-radius: 12px;
+  color: #fff;
+  margin-bottom: 30px;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+}
+header img { height: 55px; margin-right: 15px; }
+header h1 { margin: 0; font-size: 26px; }
+header p { margin: 4px 0 0; font-size: 14px; color: #cce0ff; }
+
+#controls { margin-bottom: 20px; text-align: right; }
+#controls button {
+  background: var(--blue-secondary);
+  border: none;
+  color: #fff;
+  font-weight: bold;
+  padding: 10px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+#controls button:hover { background: var(--blue-primary); }
+
+.accordion {
+  background: var(--blue-secondary);
+  color: white;
+  cursor: pointer;
+  padding: 15px 20px;
+  margin-bottom: 8px;
+  width: 100%;
+  text-align: left;
+  border: none;
+  border-radius: 8px;
+  font-size: 18px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: background 0.3s;
+}
+.accordion:hover { background: var(--blue-primary); }
+.accordion i { transition: transform 0.3s; }
+.accordion.active i { transform: rotate(180deg); }
+.panel {
+  display: none;
+  padding: 15px;
+  margin-bottom: 20px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+}
+
+.columns { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.column-left, .column-right { display: flex; flex-direction: column; gap: 15px; }
+.full-width { grid-column: span 2; }
+
+.card {
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+  border-left: 6px solid var(--blue-primary);
+}
+.card-header { display: flex; align-items: center; margin-bottom: 12px; }
+.card-header i { font-size: 22px; margin-right: 10px; color: var(--blue-secondary); }
+.time { font-weight: bold; font-size: 15px; color: var(--blue-primary); }
+.title { font-size: 17px; font-weight: bold; margin-bottom: 6px; }
+.description { font-size: 14px; color: #555; line-height: 1.5; }
+
+.documentacao { border-left-color: var(--blue-light); }
+.treinamento { border-left-color: #00aaff; }
+.configuracao { border-left-color: var(--blue-primary); }
+.alinhamento { border-left-color: #0066cc; }
+.intervalo { border-left-color: #999; }
+
+@media (max-width: 900px) { .columns { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+
+<header>
+  <img src="https://bitzsoftwares.com.br/wp-content/uploads/2025/04/horizontal-2-1-2048x1152.png" alt="Bitz Softwares">
+  <div>
+    <h1>Manual de Procedimentos - Consultores</h1>
+    <p>Fluxo de Implantação | Segunda a Sexta</p>
+  </div>
+</header>
+
+<div id="controls">
+  <button id="toggleAll">Expandir Todos</button>
+</div>
+
+<div id="agenda"></div>
+
+<script>
+function gerarRotina(dia, destaque=false) {
+  return `
+  <button class="accordion">📅 ${dia} <i class="fas fa-chevron-down"></i></button>
+  <div class="panel">
+    <div class="columns">
+      <div class="column-left">
+        <div class="card alinhamento">
+          <div class="card-header"><i class="fas fa-users"></i><div class="time">08:30 – 09:30</div></div>
+          <div class="title">${destaque ? 'Reunião de Alinhamento (Semanal)' : 'Reunião de Alinhamento'}</div>
+          <div class="description">Revisar progresso, alinhar prioridades e sincronizar atividades.</div>
+        </div>
+
+        <div class="card configuracao">
+          <div class="card-header"><i class="fas fa-cogs"></i><div class="time">09:30 – 10:30</div></div>
+          <div class="title">Configurações Avançadas</div>
+          <div class="description">Ajustes no sistema, personalizações e testes iniciais.</div>
+        </div>
+
+        <div class="card treinamento">
+          <div class="card-header"><i class="fas fa-chalkboard-teacher"></i><div class="time">10:30 – 11:30</div></div>
+          <div class="title">Treinamento</div>
+          <div class="description">Demonstrações, prática com cliente e revisão de conceitos.</div>
+        </div>
+
+        <div class="card documentacao">
+          <div class="card-header"><i class="fas fa-file-alt"></i><div class="time">11:30 – 12:00</div></div>
+          <div class="title">Documentação da Manhã</div>
+          <div class="description">Registrar atividades, atualizar tickets e checklist da tarde.</div>
+        </div>
+      </div>
+
+      <div class="card intervalo full-width">
+        <div class="card-header"><i class="fas fa-coffee"></i><div class="time">12:00 – 13:00</div></div>
+        <div class="title">Intervalo / Almoço</div>
+        <div class="description">Pausa para almoço, retorno pontual.</div>
+      </div>
+
+      <div class="column-right">
+        <div class="card configuracao">
+          <div class="card-header"><i class="fas fa-cogs"></i><div class="time">13:00 – 14:30</div></div>
+          <div class="title">Configurações Avançadas</div>
+          <div class="description">Ajustes finais e testes detalhados em módulos complexos.</div>
+        </div>
+
+        <div class="card treinamento">
+          <div class="card-header"><i class="fas fa-chalkboard-teacher"></i><div class="time">14:30 – 15:30</div></div>
+          <div class="title">Treinamento / Suporte</div>
+          <div class="description">Auxiliar uso real, tirar dúvidas e acompanhar operações.</div>
+        </div>
+
+        <div class="card treinamento">
+          <div class="card-header"><i class="fas fa-chalkboard-teacher"></i><div class="time">15:30 – 16:30</div></div>
+          <div class="title">Reunião Técnica</div>
+          <div class="description">Revisar aprendizados, tratar dúvidas complexas e alinhar próximos passos.</div>
+        </div>
+
+        <div class="card alinhamento">
+          <div class="card-header"><i class="fas fa-users"></i><div class="time">16:30 – 17:30</div></div>
+          <div class="title">Encerramento do Dia</div>
+          <div class="description">Revisão final, próximos passos e comunicação ao cliente.</div>
+        </div>
+      </div>
+    </div>
+  </div>`;
+}
+
+const dias = ["Segunda-feira", "Terça-feira", "Quarta-feira", "Quinta-feira", "Sexta-feira"];
+let agendaHTML = "";
+dias.forEach(dia => agendaHTML += gerarRotina(dia, dia==="Terça-feira"));
+document.getElementById("agenda").innerHTML = agendaHTML;
+
+// Acordeão
+document.querySelectorAll(".accordion").forEach(button => {
+  button.addEventListener("click", () => {
+    button.classList.toggle("active");
+    const panel = button.nextElementSibling;
+    panel.style.display = panel.style.display === "block" ? "none" : "block";
+  });
+});
+
+// Botão expandir/recolher todos
+const toggleBtn = document.getElementById("toggleAll");
+let expanded = false;
+toggleBtn.addEventListener("click", () => {
+  expanded = !expanded;
+  document.querySelectorAll(".accordion").forEach((btn, i) => {
+    const panel = btn.nextElementSibling;
+    btn.classList.toggle("active", expanded);
+    panel.style.display = expanded ? "block" : "none";
+  });
+  toggleBtn.textContent = expanded ? "Recolher Todos" : "Expandir Todos";
+});
+</script>
+
+</body>
+</html>
