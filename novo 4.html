@@ -6,12 +6,12 @@
 <title>Calculadora de tempo de Implantação - Bitz</title>
 <link href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css" rel="stylesheet">
 <style>
-  body {font-family: 'Poppins', sans-serif;background: linear-gradient(180deg, #f8fafc 0%, #e2e8f0 100%);color: #1e293b;margin: 0;padding: 30px}
-  header {display:flex;align-items:center;justify-content:center;margin-bottom:20px}
+  body {font-family:'Poppins',sans-serif;background:linear-gradient(180deg,#f8fafc 0%,#e2e8f0 100%);color:#1e293b;margin:0;padding:30px}
+  header{display:flex;align-items:center;justify-content:center;margin-bottom:20px}
   header img{height:50px;margin-right:12px}
   h1{font-size:1.6rem;margin:0}
-  .grid {display:grid;grid-template-columns:repeat(6,1fr);gap:12px}
-  .module {background:white;border-radius:12px;padding:12px;text-align:center;box-shadow:0 4px 12px rgba(0,0,0,0.04);cursor:pointer;transition:transform .15s,box-shadow .15s}
+  .grid{display:grid;grid-template-columns:repeat(6,1fr);gap:12px}
+  .module{background:white;border-radius:12px;padding:12px;text-align:center;box-shadow:0 4px 12px rgba(0,0,0,0.04);cursor:pointer;transition:transform .15s,box-shadow .15s}
   .module:hover{transform:translateY(-3px);box-shadow:0 8px 18px rgba(0,0,0,0.06)}
   .module i{font-size:26px;color:#2563eb;margin-bottom:8px}
   .module input{margin-top:8px}
@@ -26,7 +26,7 @@
 </head>
 <body>
 <header>
-  <img src="https://bitzsoftwares.com.br/wp-content/uploads/2025/04/horizontal-2-1-2048x1152.png"" alt="Bitz logo">
+  <img src="https://bitzsoftwares.com.br/wp-content/uploads/2025/04/horizontal-2-1-2048x1152.png" alt="Bitz logo">
   <h1>Calculadora de tempo de Implantação - Bitz</h1>
 </header>
 
@@ -54,6 +54,9 @@
   <label class="module"><i class="ri-user-line"></i><div>Auto Atendimento<br><small>1 h</small><br><input type="checkbox" value="1" data-nome="Auto Atendimento"></div></label>
   <label class="module"><i class="ri-timer-line"></i><div>Motor de Day Use<br><small>2 h</small><br><input type="checkbox" value="2" data-nome="Motor de Day Use"></div></label>
   <label class="module"><i class="ri-bank-card-line"></i><div>Stone<br><small>1 h</small><br><input type="checkbox" value="1" data-nome="Stone"></div></label>
+  <label class="module"><i class="ri-smartphone-line"></i><div>App Garçom<br><small>2 h</small><br><input type="checkbox" value="2" data-nome="App Garçom"></div></label>
+  <label class="module"><i class="ri-check-line"></i><div>Ease Check<br><small>1 h</small><br><input type="checkbox" value="1" data-nome="Ease Check"></div></label>
+  <label class="module"><i class="ri-whatsapp-line"></i><div>Otélia WhatsApp<br><small>1 h</small><br><input type="checkbox" value="1" data-nome="Otélia WhatsApp"></div></label>
   <label class="module"><i class="ri-book-open-line"></i><div>Wizard / Análise de Aderência<br><small>1,5 h</small><br><input type="checkbox" value="1.5" data-nome="Wizard / Análise de Aderência" checked disabled></div></label>
 </div>
 
@@ -73,37 +76,33 @@ const pdfBtn = document.getElementById('pdf');
 const resumo = document.getElementById('resumo');
 const modulos = document.querySelectorAll('#modulos input[type="checkbox"]');
 
-function formatHours(n){ return Number.isInteger(n)? String(n) : n.toFixed(1).replace('.',','); }
+function formatHours(n){return Number.isInteger(n)?String(n):n.toFixed(1).replace('.',',');}
 
 function gerarResumo(){
-  const selecionados = Array.from(modulos).filter(m => m.checked);
-  if(selecionados.length === 0){ resumo.textContent = 'Nenhum módulo selecionado.'; return; }
-
-  const totalHoras = selecionados.reduce((acc, s) => acc + parseFloat(s.value || 0), 0);
-  const trainingDays = selecionados.length * 3;
-
-  const lista = selecionados.map(s => `• ${s.dataset.nome} (${s.value}h)`).join('\n');
-  const texto = `📋 Módulos Selecionados:\n${lista}\n\n⏱️ Total de Horas: ${formatHours(totalHoras)} h\n📅 Dias de Treinamento: ${trainingDays} dias`;
+  const selecionados = Array.from(modulos).filter(m=>m.checked);
+  if(selecionados.length===0){resumo.textContent='Nenhum módulo selecionado.';return;}
+  const totalHoras = selecionados.reduce((a,s)=>a+parseFloat(s.value||0),0);
+  const diasTreinamento = selecionados.length*3;
+  const lista = selecionados.map(s=>`• ${s.dataset.nome} (${s.value}h)`).join('\n');
+  const texto = `📋 Módulos Selecionados:\n${lista}\n\n⏱️ Total de Horas: ${formatHours(totalHoras)} h\n📅 Dias de Treinamento: ${diasTreinamento} dias`;
   resumo.textContent = texto;
 }
 
 function limparTudo(){
-  modulos.forEach(m => { if(!m.disabled) m.checked = false; });
-  resumo.textContent = '';
+  modulos.forEach(m=>{if(!m.disabled)m.checked=false;});
+  resumo.textContent='';
 }
 
 function exportPdf(){
-  const opt = {margin:0.4,filename:'resumo_implantacao_bitz.pdf',image:{type:'jpeg',quality:0.98},html2canvas:{scale:2,useCORS:true},jsPDF:{unit:'in',format:'a4',orientation:'portrait'}};
+  const opt={margin:0.4,filename:'resumo_implantacao_bitz.pdf',image:{type:'jpeg',quality:0.98},html2canvas:{scale:2,useCORS:true},jsPDF:{unit:'in',format:'a4',orientation:'portrait'}};
   html2pdf().set(opt).from(document.getElementById('resumo')).save();
 }
 
-gerar.addEventListener('click', gerarResumo);
-limpar.addEventListener('click', limparTudo);
-pdfBtn.addEventListener('click', exportPdf);
-modulos.forEach(m=>m.addEventListener('change', gerarResumo));
+gerar.addEventListener('click',gerarResumo);
+limpar.addEventListener('click',limparTudo);
+pdfBtn.addEventListener('click',exportPdf);
+modulos.forEach(m=>m.addEventListener('change',gerarResumo));
 gerarResumo();
 </script>
 </body>
-
 </html>
-
