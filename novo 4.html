@@ -3,22 +3,84 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Calculadora de tempo de Implantação - Bitz</title>
+<title>Calculadora de Tempo de Implantação - Bitz</title>
 <link href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css" rel="stylesheet">
 <style>
-  body {font-family:'Poppins',sans-serif;background:linear-gradient(180deg,#f8fafc 0%,#e2e8f0 100%);color:#1e293b;margin:0;padding:30px}
-  header{display:flex;align-items:center;justify-content:center;margin-bottom:20px}
-  header img{height:50px;margin-right:12px}
-  h1{font-size:1.6rem;margin:0}
-  .grid{display:grid;grid-template-columns:repeat(6,1fr);gap:12px}
-  .module{background:white;border-radius:12px;padding:12px;text-align:center;box-shadow:0 4px 12px rgba(0,0,0,0.04);cursor:pointer;transition:transform .15s,box-shadow .15s}
-  .module:hover{transform:translateY(-3px);box-shadow:0 8px 18px rgba(0,0,0,0.06)}
-  .module i{font-size:26px;color:#2563eb;margin-bottom:8px}
-  .module input{margin-top:8px}
-  .controls{display:flex;gap:10px;justify-content:center;margin-top:18px}
-  button{background:#2563eb;color:#fff;border:0;padding:10px 16px;border-radius:8px;cursor:pointer;font-weight:600}
-  button.clear{background:#64748b}
-  #resumo{margin-top:20px;background:white;padding:14px;border-radius:10px;box-shadow:0 2px 10px rgba(0,0,0,0.06);white-space:pre-line}
+  body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(180deg, #f8fafc 0%, #e2e8f0 100%);
+    color: #1e293b;
+    margin: 0;
+    padding: 30px;
+  }
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 25px;
+  }
+  header img {
+    height: 55px;
+    margin-right: 14px;
+  }
+  h1 {
+    font-size: 1.6rem;
+    margin: 0;
+    color: #1e3a8a;
+    font-weight: 600;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 14px;
+  }
+  .module {
+    background: white;
+    border-radius: 12px;
+    padding: 12px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    transition: all 0.2s ease;
+  }
+  .module:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 18px rgba(0,0,0,0.08);
+  }
+  .module i {
+    font-size: 26px;
+    color: #2563eb;
+    margin-bottom: 8px;
+  }
+  .controls {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 22px;
+  }
+  button {
+    background: #2563eb;
+    color: #fff;
+    border: 0;
+    padding: 10px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background 0.2s;
+  }
+  button:hover { background: #1d4ed8; }
+  button.clear { background: #64748b; }
+  button.clear:hover { background: #475569; }
+  #resumo {
+    margin-top: 25px;
+    background: white;
+    padding: 18px 22px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+    white-space: pre-line;
+    text-align: left;
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
   @media(max-width:1200px){.grid{grid-template-columns:repeat(4,1fr)}}
   @media(max-width:900px){.grid{grid-template-columns:repeat(3,1fr)}}
   @media(max-width:600px){.grid{grid-template-columns:repeat(2,1fr)}}
@@ -27,7 +89,7 @@
 <body>
 <header>
   <img src="https://bitzsoftwares.com.br/wp-content/uploads/2025/04/horizontal-2-1-2048x1152.png" alt="Bitz logo">
-  <h1>Calculadora de tempo de Implantação - Bitz</h1>
+  <h1>Calculadora de Tempo de Implantação - Bitz</h1>
 </header>
 
 <div class="grid" id="modulos">
@@ -42,11 +104,11 @@
   <label class="module"><i class="ri-file-list-line"></i><div>SPED<br><small>3 h</small><br><input type="checkbox" value="3" data-nome="SPED"></div></label>
   <label class="module"><i class="ri-restaurant-line"></i><div>PDV Restaurante<br><small>2 h</small><br><input type="checkbox" value="2" data-nome="PDV Restaurante"></div></label>
   <label class="module"><i class="ri-global-line"></i><div>Otélia Site<br><small>1 h</small><br><input type="checkbox" value="1" data-nome="Otélia Site"></div></label>
-  <label class="module"><i class="ri-message-2-line"></i><div>WhatsApp<br><small>1 h</small><br><input type="checkbox" value="1" data-nome="WhatsApp"></div></label>
+  <label class="module"><i class="ri-whatsapp-line"></i><div>WhatsApp<br><small>1 h</small><br><input type="checkbox" value="1" data-nome="WhatsApp"></div></label>
   <label class="module"><i class="ri-computer-line"></i><div>Website<br><small>4 h</small><br><input type="checkbox" value="4" data-nome="Website"></div></label>
   <label class="module"><i class="ri-check-double-line"></i><div>Web Check-in<br><small>1 h</small><br><input type="checkbox" value="1" data-nome="Web Check-in"></div></label>
   <label class="module"><i class="ri-plug-line"></i><div>Integração IO<br><small>2 h</small><br><input type="checkbox" value="2" data-nome="Integração IO"></div></label>
-  <label class="module"><i class="ri-scale-line"></i><div>Integração de Balança<br><small>2 h</small><br><input type="checkbox" value="2" data-nome="Integração de Balança"></div></label>
+  <label class="module"><i class="ri-scales-2-line"></i><div>Integração de Balança<br><small>2 h</small><br><input type="checkbox" value="2" data-nome="Integração de Balança"></div></label>
   <label class="module"><i class="ri-money-dollar-circle-line"></i><div>Fiscal<br><small>2 h</small><br><input type="checkbox" value="2" data-nome="Fiscal"></div></label>
   <label class="module"><i class="ri-calendar-event-line"></i><div>Eventos<br><small>2 h</small><br><input type="checkbox" value="2" data-nome="Eventos"></div></label>
   <label class="module"><i class="ri-tools-line"></i><div>Manutenção<br><small>1 h</small><br><input type="checkbox" value="1" data-nome="Manutenção"></div></label>
@@ -54,10 +116,12 @@
   <label class="module"><i class="ri-user-line"></i><div>Auto Atendimento<br><small>1 h</small><br><input type="checkbox" value="1" data-nome="Auto Atendimento"></div></label>
   <label class="module"><i class="ri-timer-line"></i><div>Motor de Day Use<br><small>2 h</small><br><input type="checkbox" value="2" data-nome="Motor de Day Use"></div></label>
   <label class="module"><i class="ri-bank-card-line"></i><div>Stone<br><small>1 h</small><br><input type="checkbox" value="1" data-nome="Stone"></div></label>
-  <label class="module"><i class="ri-smartphone-line"></i><div>App Garçom<br><small>2 h</small><br><input type="checkbox" value="2" data-nome="App Garçom"></div></label>
-  <label class="module"><i class="ri-check-line"></i><div>Ease Check<br><small>1 h</small><br><input type="checkbox" value="1" data-nome="Ease Check"></div></label>
-  <label class="module"><i class="ri-whatsapp-line"></i><div>Otélia WhatsApp<br><small>1 h</small><br><input type="checkbox" value="1" data-nome="Otélia WhatsApp"></div></label>
+
+  <!-- Módulos obrigatórios -->
   <label class="module"><i class="ri-book-open-line"></i><div>Wizard / Análise de Aderência<br><small>1,5 h</small><br><input type="checkbox" value="1.5" data-nome="Wizard / Análise de Aderência" checked disabled></div></label>
+  <label class="module"><i class="ri-question-answer-line"></i><div>Reunião de Tira-dúvidas<br><small>1 h</small><br><input type="checkbox" value="1" data-nome="Reunião de Tira-dúvidas" checked disabled></div></label>
+  <label class="module"><i class="ri-refresh-line"></i><div>Reunião de Virada<br><small>1 h</small><br><input type="checkbox" value="1" data-nome="Reunião de Virada" checked disabled></div></label>
+  <label class="module"><i class="ri-checkbox-circle-line"></i><div>Reunião de Fechamento<br><small>1 h</small><br><input type="checkbox" value="1" data-nome="Reunião de Fechamento" checked disabled></div></label>
 </div>
 
 <div class="controls">
@@ -76,15 +140,25 @@ const pdfBtn = document.getElementById('pdf');
 const resumo = document.getElementById('resumo');
 const modulos = document.querySelectorAll('#modulos input[type="checkbox"]');
 
-function formatHours(n){return Number.isInteger(n)?String(n):n.toFixed(1).replace('.',',');}
-
 function gerarResumo(){
   const selecionados = Array.from(modulos).filter(m=>m.checked);
-  if(selecionados.length===0){resumo.textContent='Nenhum módulo selecionado.';return;}
+  if(selecionados.length===0){
+    resumo.textContent='Nenhum módulo selecionado.';
+    return;
+  }
+
   const totalHoras = selecionados.reduce((a,s)=>a+parseFloat(s.value||0),0);
-  const diasTreinamento = selecionados.length*3;
-  const lista = selecionados.map(s=>`• ${s.dataset.nome} (${s.value}h)`).join('\n');
-  const texto = `📋 Módulos Selecionados:\n${lista}\n\n⏱️ Total de Horas: ${formatHours(totalHoras)} h\n📅 Dias de Treinamento: ${diasTreinamento} dias`;
+  const totalModulos = selecionados.length;
+
+  // Regras para dias:
+  const reunioesEspeciais = ["Reunião de Tira-dúvidas","Reunião de Virada","Reunião de Fechamento"];
+  const modulosNormais = selecionados.filter(m => !reunioesEspeciais.includes(m.dataset.nome));
+  const diasNormais = modulosNormais.length * 3;
+  const diasReunioes = 1; // total de 1 dia para as 3 reuniões
+  const totalDias = diasNormais + diasReunioes;
+
+  const lista = selecionados.map(s=>`• ${s.dataset.nome} (${s.value} h)`).join('\n');
+  const texto = `📋 Módulos Selecionados:\n${lista}\n\n⏱️ Total de Horas: ${totalHoras.toFixed(1).replace('.', ',')} h\n📦 Total de Módulos: ${totalModulos}\n📅 Estimativa de Duração: ${totalDias} dias`;
   resumo.textContent = texto;
 }
 
